@@ -1,0 +1,55 @@
+﻿@model WebSite.Models.SectionViewModel
+@{
+    ViewBag.Title = "Создание секции сайта";
+    Layout = "~/Areas/Admin/Views/Shared/_DashboardLayout.cshtml";
+}
+<div class="span9">
+    <div class="well">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Создание нового раздела сайта</legend>
+                <br/>
+                <blockquote>
+                    <p>
+                        Создайте тематический раздел сайта, в котором будет содержаться
+                        контент с общими тематическими категориями.</p>
+                    <small>Название обязательно</small>
+                </blockquote>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Name, new {@id="popover",@title="Не более 25 символов"})
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Description)
+                </div>
+                <div class="editor-field">
+                    @Html.TextAreaFor(model => model.Description, new { style="width: 700px; height: 100px;", @id="popover", @title="Не более 250 символов" })
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+                <br/>
+                <p>
+                    <a class="btn btn-success submit-link" href="#"><i class="icon-ok-sign"></i>  Создать</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-danger" href="@Request.UrlReferrer"><i class="icon-remove-sign"></i>  Отменить</a>
+                </p>
+            </fieldset>
+        }
+        
+    </div>
+</div>
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function() {
+            $("*#popover").tooltip({ 
+                placement: 'right',
+                delay: { show: 500, hide: 100 }
+            });
+        });
+    </script>
+}

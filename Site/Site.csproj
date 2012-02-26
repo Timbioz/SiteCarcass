@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AED7FD2-B9AA-449B-A322-909CCE9078DD}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Site</RootNamespace>
+    <AssemblyName>Site</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.0.0\lib\net40-client\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.1\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.3.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=0.87.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Glimpse.0.87\lib\net40\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Elmah">
+      <HintPath>..\packages\Glimpse.Elmah.0.9.7\lib\net40\Glimpse.Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\packages\Mvc3Futures.3.0.20105.0\lib\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Optimization">
+      <HintPath>..\packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib">
+      <HintPath>..\packages\MvcContrib.Mvc3-ci.3.0.96.0\lib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPagesCore.2.0.10906.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetMvc.4.0.10906.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\System.Web.Providers.1.0.1\lib\Net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPagesCore.2.0.10906.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPagesCore.2.0.10906.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPagesCore.2.0.10906.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPagesCore.2.0.10906.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.Mvc">
+      <HintPath>C:\Program Files (x86)\Telerik\Extensions for ASP.NET MVC Q1 2012\Binaries\Mvc3\Telerik.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc3">
+      <HintPath>..\packages\Unity.Mvc3.1.1\lib\Unity.Mvc3.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.BaseController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.DashboardController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.SectionsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.SettingsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.TopicsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\App_Start.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SectionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TopicsController.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\glimpse.elmah.readme.txt" />
+    <Content Include="App_Readme\glimpse.readme.txt" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_000_glass.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_001_leaf.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_002_dog.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_003_user.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_004_girl.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_005_car.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_006_user_add.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_007_user_remove.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_008_film.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_009_magic.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_010_envelope.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_011_camera.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_012_heart.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_013_beach_umbrella.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_014_train.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_015_print.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_016_bin.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_017_music.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_018_note.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_019_cogwheel.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_020_home.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_021_snowflake.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_022_fire.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_023_cogwheels.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_024_parents.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_025_binoculars.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_026_road.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_027_search.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_028_cars.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_029_notes_2.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_030_pencil.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_031_bus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_032_wifi_alt.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_033_luggage.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_034_old_man.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_035_woman.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_036_file.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_037_credit.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_038_airplane.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_039_notes.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_040_stats.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_041_charts.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_042_pie_chart.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_043_group.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_044_keys.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_045_calendar.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_046_router.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_047_camera_small.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_048_dislikes.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_049_star.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_050_link.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_051_eye_open.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_052_eye_close.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_053_alarm.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_054_clock.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_055_stopwatch.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_056_projector.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_057_history.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_058_truck.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_059_cargo.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_060_compass.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_061_keynote.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_062_attach.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_063_power.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_064_lightbulb.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_065_tag.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_066_tags.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_067_cleaning.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_068_ruller.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_069_gift.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_070_umbrella.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_071_book.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_072_bookmark.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_073_signal.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_074_cup.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_075_stroller.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_076_headphones.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_077_headset.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_078_warning_sign.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_079_signal.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_080_retweet.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_081_refresh.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_082_roundabout.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_083_random.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_084_heat.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_085_repeat.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_086_display.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_087_log_book.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_088_adress_book.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_089_magnet.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_090_table.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_091_adjust.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_092_tint.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_093_crop.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_094_vector_path_square.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_095_vector_path_circle.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_096_vector_path_polygon.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_097_vector_path_line.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_098_vector_path_curve.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_099_vector_path_all.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_100_font.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_101_italic.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_102_bold.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_103_text_underline.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_104_text_strike.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_105_text_height.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_106_text_width.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_107_text_resize.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_108_left_indent.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_109_right_indent.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_110_align_left.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_111_align_center.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_112_align_right.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_113_justify.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_114_list.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_115_text_smaller.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_116_text_bigger.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_117_embed.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_118_embed_close.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_119_adjust.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_120_message_full.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_121_message_empty.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_122_message_in.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_123_message_out.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_124_message_plus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_125_message_minus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_126_message_ban.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_127_message_flag.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_128_message_lock.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_129_message_new.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_130_inbox.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_131_inbox_plus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_132_inbox_minus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_133_inbox_lock.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_134_inbox_in.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_135_inbox_out.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_136_computer_locked.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_137_computer_service.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_138_computer_proces.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_139_phone.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_140_database_lock.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_141_database_plus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_142_database_minus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_143_database_ban.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_144_folder_open.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_145_folder_plus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_146_folder_minus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_147_folder_lock.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_148_folder_flag.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_149_folder_new.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_150_check.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_151_edit.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_152_new_window.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_153_more_windows.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_154_show_big_thumbnails.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_155_show_thumbnails.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_156_show_thumbnails_with_lines.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_157_show_lines.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_158_playlist.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_159_picture.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_160_imac.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_161_macbook.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_162_ipad.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_163_iphone.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_164_iphone_transfer.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_165_iphone_exchange.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_166_ipod.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_167_ipod_shuffle.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_168_ear_plugs.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_169_albums.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_170_step_backward.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_171_fast_backward.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_172_rewind.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_173_play.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_174_pause.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_175_stop.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_176_forward.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_177_fast_forward.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_178_step_forward.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_179_eject.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_180_facetime_video.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_181_download_alt.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_182_mute.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_183_volume_down.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_184_volume_up.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_185_screenshot.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_186_move.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_187_more.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_188_brightness_reduce.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_189_brightness_increase.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_190_circle_plus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_191_circle_minus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_192_circle_remove.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_193_circle_ok.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_194_circle_question_mark.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_195_circle_info.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_196_circle_exclamation_mark.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_197_remove.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_198_ok.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_199_ban.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_200_download.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_201_upload.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_202_shopping_cart.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_203_lock.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_204_unlock.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_205_electricity.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_206_ok_2.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_207_remove_2.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_208_cart_out.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_209_cart_in.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_210_left_arrow.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_211_right_arrow.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_212_down_arrow.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_213_up_arrow.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_214_resize_small.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_215_resize_full.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_216_circle_arrow_left.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_217_circle_arrow_right.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_218_circle_arrow_right.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_219_circle_arrow_right.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_220_play_button.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_221_unshare.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_222_share.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_223_thin_right_arrow.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_224_thin_arrow_left.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_225_bluetooth.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_226_euro.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_227_usd.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_228_bp.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_229_retweet_2.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_230_moon.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_231_sun.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_232_cloud.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_233_direction.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_234_brush.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_235_pen.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_236_zoom_in.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_237_zoom_out.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_238_pin.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_239_riflescope.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_240_rotation_lock.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_241_flash.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_242_google_maps.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_243_anchor.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_244_conversation.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_245_chat.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_246_male.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_247_female.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_248_asterisk.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_249_divide.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_250_snorkel_diving.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_251_scuba_diving.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_252_oxygen_bottle.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_253_fins.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_254_fishes.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_255_boat.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_256_delete_point.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_257_sheriffs_-star.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_258_qrcode.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_259_barcode.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_260_pool.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_261_buoy.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_262_spade.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_263_bank.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_264_vcard.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_265_electrical_plug.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_266_flag.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_267_credit_card.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_268_keyboard_wireless.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_269_keyboard_wired.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_270_shield.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_271_ring.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_272_cake.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_273_drink.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_274_beer.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_275_fast_food.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_276_cutlery.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_277_pizza.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_278_birthday_cake.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_279_tablet.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_280_settings.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_281_bullets.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_282_cardio.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_283_t-shirt.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_284_pants.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_285_sweater.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_286_fabric.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_287_leather.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_288_scissors.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_289_podium.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_290_skull.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_291_celebration.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_292_tea_kettle.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_293_french_press.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_294_coffe_cup.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_295_pot.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_296_grater.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_297_kettle.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_298_hospital.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_299_hospital_h.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_300_microphone.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_301_webcam.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_302_temple_christianity_church.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_303_temple_islam.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_304_temple_hindu.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_305_temple_buddhist.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_306_electrical_socket_eu.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_307_electrical_socket_us.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_308_bomb.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_309_comments.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_310_flower.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_311_baseball.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_312_rugby.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_313_ax.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_314_table_tennis.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_315_bowling.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_316_tree_conifer.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_317_tree_deciduous.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_318_more-items.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_319_sort.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_320_facebook.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_321_twitter_t.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_322_twitter.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_323_buzz.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_324_vimeo.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_325_flickr.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_326_last_fm.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_327_rss.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_328_skype.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_329_e-mail.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_330_instapaper.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_331_evernote.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_332_xing.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_333_zootool.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_334_dribbble.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_335_deviantart.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_336_read_it_later.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_337_linked_in.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_338_forrst.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_339_pinboard.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_340_behance.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_341_github.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_342_youtube.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_343_skitch.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_344_4square.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_345_quora.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_346_google_plus.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_347_spootify.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_348_stumbleupon.png" />
+    <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_349_readability.png" />
+    <Content Include="Areas\Admin\Style\Telerik\telerik.common.min.css" />
+    <Content Include="Areas\Admin\Style\Telerik\telerik.telerik.min.css" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\editor.png" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\imagebrowser.png" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\loading.gif" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\slider-h.gif" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\slider-v.gif" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\sprite-vertical.png" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\sprite.png" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\treeview-line.png" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\treeview-nodes-rtl.png" />
+    <Content Include="Areas\Admin\Style\Telerik\Telerik\treeview-nodes.png" />
+    <Content Include="Scripts\MyScripts.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Areas\Admin\Style\Bootstrap\bootstrap-responsive.min.css" />
+    <Content Include="Areas\Admin\Style\Bootstrap\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Style\Bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Areas\Admin\Style\Bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Areas\Admin\Style\dashboard.css" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Areas\Admin\Style\JQui\smoothness\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-1.3.0beta.debug.js" />
+    <Content Include="Scripts\knockout-1.3.0beta.js" />
+    <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
+    <Content Include="Scripts\telerik.common.min.js" />
+    <Content Include="Scripts\telerik.grid.editing.min.js" />
+    <Content Include="Scripts\telerik.grid.filtering.min.js" />
+    <Content Include="Scripts\telerik.grid.grouping.min.js" />
+    <Content Include="Scripts\telerik.grid.min.js" />
+    <Content Include="Scripts\telerik.grid.reordering.min.js" />
+    <Content Include="Scripts\telerik.grid.resizing.min.js" />
+    <Content Include="Scripts\telerik.panelbar.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\AjaxLogin.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedListOne.png" />
+    <Content Include="Images\orderedListTwo.png" />
+    <Content Include="Images\orderedListThree.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\windowsLive.png" />
+    <Content Include="Images\aspNetHome.png" />
+    <Content Include="Images\NuGetGallery.png" />
+    <Content Include="Images\findHosting.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{96E2A93E-A314-43DE-8532-BEA380D3D350}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{0EAA82EC-8860-4E5F-AF76-9ED62E38C8A5}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{CA784914-CADF-4B58-9D4E-5003D41166A8}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_DashboardLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_Links.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_Scripts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Settings\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Settings\Grid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_LeftMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Areas\Admin\Images\Glyphicons\.DS_Store" />
+    <Content Include="Areas\Admin\Views\Topics\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sections\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Sections\Index.cshtml" />
+    <None Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="T4MVC.tt.settings.t4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61623</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

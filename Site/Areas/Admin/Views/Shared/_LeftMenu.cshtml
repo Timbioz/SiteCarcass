@@ -1,0 +1,37 @@
+﻿@(Html.Telerik().PanelBar()
+       .Name("PanelBar")
+       .Items(items =>
+       {
+           items.Add().Text("Разделы сайта")
+               .Expanded(true)
+               .HtmlAttributes(new { style = "font-weight: bold" })
+               .ImageUrl(Url.Content("~/Areas/Admin/Images/Glyphicons/glyphicons_144_folder_open.png"))
+               .ImageHtmlAttributes(new { style = "height: 16px" })
+               .Items(subItem =>
+               {
+                   subItem.Add()
+                       .Text("Все разделы")
+                       .HtmlAttributes(new { style = "font-weight: normal" })
+                       .Url(Url.Action(MVC.Admin.Sections.Index()))
+                       .ImageUrl(Url.Content("~/Areas/Admin/Images/Glyphicons/glyphicons_149_folder_new.png"))
+                       .ImageHtmlAttributes(new { style = "height: 14px" });
+                   subItem.Add()
+                       .Text("Создать раздел")
+                       .HtmlAttributes(new { style = "font-weight: normal" })
+                       .Url(Url.Action(MVC.Admin.Sections.Create()))
+                       .ImageUrl(Url.Content("~/Areas/Admin/Images/Glyphicons/glyphicons_145_folder_plus.png"))
+                       .ImageHtmlAttributes(new { style = "height: 14px" }); ;
+               });
+           items.Add().Text("Статьи")
+               .Items(subItem =>
+                          {
+                              subItem.Add()
+                                  .Text("Все статьи")
+                                  .Url(Url.Action(MVC.Admin.Settings.Grid()))
+                                  .ImageUrl(Url.Content("~/Areas/Admin/Images/Glyphicons/glyphicons_030_pencil.png"))
+                                  .ImageHtmlAttributes(new {style="height: 14px"});
+                              subItem.Add()
+                                  .Text("Создать");
+                          });
+           items.Add().Text("Item 2");
+       }))

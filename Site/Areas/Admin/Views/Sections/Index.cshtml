@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WebSite.Models.SectionViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="span9">
+    <div class="well">
+        @(Html.Telerik().Grid(Model)
+        .Name("OrdersGrid")
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.Name);
+            columns.Bound(o => o.Description);
+        })
+        .Pageable()
+        .Sortable())
+    </div>
+</div>
