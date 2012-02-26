@@ -8,6 +8,6 @@ namespace Site.Areas.Admin.Controllers
 {
     public partial class BaseController : Controller
     {
-
+        //ssqqqssqs
     }
 }
