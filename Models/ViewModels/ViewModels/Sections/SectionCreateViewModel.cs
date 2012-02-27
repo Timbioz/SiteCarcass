@@ -7,20 +7,20 @@ using AutoMapper;
 
 namespace WebSite.Models
 {
-    public class SectionViewModel : DashboardViewModel
+    public class SectionCreateViewModel : DashboardViewModel
     {
-        public SectionViewModel(){}
+        public SectionCreateViewModel(){}
 
-        public SectionViewModel(Sections section)
+        public SectionCreateViewModel(Sections section)
         {
-            Mapper.CreateMap<Sections, SectionViewModel>();
+            Mapper.CreateMap<Sections, SectionCreateViewModel>();
             Mapper.Map(section, this);
         }
 
-        public static IEnumerable<SectionViewModel> GetDtoList(IEnumerable<Sections> sections)
+        public static IEnumerable<SectionCreateViewModel> GetDtoList(IEnumerable<Sections> sections)
         {
-            Mapper.CreateMap<Sections, SectionViewModel>();
-            var list = Mapper.Map<IEnumerable<Sections>, IEnumerable<SectionViewModel>>(sections);
+            Mapper.CreateMap<Sections, SectionCreateViewModel>();
+            var list = Mapper.Map<IEnumerable<Sections>, IEnumerable<SectionCreateViewModel>>(sections);
             return list;
         }
 

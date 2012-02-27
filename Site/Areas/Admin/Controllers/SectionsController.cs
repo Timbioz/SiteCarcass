@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebSite.Services;
 using WebSite.Models;
+using WebSite.Core;
 using WebSite.Data;
 using AutoMapper;
 
@@ -22,26 +23,26 @@ namespace Site.Areas.Admin.Controllers
 
         public virtual ActionResult Index()
         {
-            var model = sections.GetAll();
-            var dto_model = SectionViewModel.GetDtoList(model);
-            
-            return View(dto_model);
+            var sect = sections.GetAll();
+            var model = new SectionsIndexViewModel(sect);
+            return View(model);
         }
 
         public virtual ActionResult Create()
         {
-            return View();
+            var model = new SectionCreateViewModel();
+            return View(model);
         }
 
         [HttpPost]
-        public virtual ActionResult Create(SectionViewModel model)
+        public virtual ActionResult Create(SectionCreateViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
             sections.CreateMapping(model);
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

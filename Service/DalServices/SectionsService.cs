@@ -44,8 +44,8 @@ namespace WebSite.Services
         {
             
             var sect = new Sections();
-            Mapper.CreateMap<SectionViewModel, Sections>();
-            Mapper.Map((SectionViewModel)viewModel, sect);
+            Mapper.CreateMap<SectionCreateViewModel, Sections>();
+            Mapper.Map((SectionCreateViewModel)viewModel, sect);
             sectionsRepository.Add(sect);
             unitOfWork.Commit();
             if (sectionsRepository != null && unitOfWork != null)

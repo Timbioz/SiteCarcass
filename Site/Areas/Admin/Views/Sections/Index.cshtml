@@ -1,20 +1,25 @@
-﻿@model IEnumerable<WebSite.Models.SectionViewModel>
-
+﻿@model WebSite.Models.SectionsIndexViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_DashboardLayout.cshtml";
+    
 }
-
 <div class="span9">
-
-        @(Html.Telerik().Grid(Model)
+    @(Html.Telerik().Grid(Model.Sections)
         .Name("SectionsGrid")
         .Columns(columns =>
         {
             columns.Bound(o => o.Name);
             columns.Bound(o => o.Description);
+            columns.Template(t =>
+                                 {
+                                     
+                                 });
         })
         .Pageable()
-        .Sortable())
+           .Sortable())
+    <div class="editor-field">
+    @Html.DropDownListFor(model => model.Names, Model.Names)
+</div>
 
 </div>

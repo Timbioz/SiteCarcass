@@ -711,6 +711,7 @@
     <Content Include="Areas\Admin\Views\Shared\_LeftMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App.config" />
     <None Include="Areas\Admin\Images\Glyphicons\.DS_Store" />
     <Content Include="Areas\Admin\Views\Topics\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Sections\Create.cshtml" />
@@ -741,7 +742,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61623</DevelopmentServerPort>
+          <DevelopmentServerPort>32437</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
