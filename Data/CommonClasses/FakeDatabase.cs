@@ -114,53 +114,101 @@ namespace WebSite.Data
             settings.ForEach(s => context.Settings.Add(s));
             context.SaveChanges();
 
-            var settingsCategories = new List<Category>
-                                         {
-                                             new Category
-                                                 {
-                                                     Name = "FakeCategory1",
-                                                     Description =
-                                                         "In elementum Fake 1 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
-                                                 },
-                                             new Category
-                                                 {
-                                                     Name = "FakeCategory2",
-                                                     Description =
-                                                         "In elementum Fake 2 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
-                                                 },
-                                             new Category
-                                                 {
-                                                     Name = "FakeCategory3",
-                                                     Description =
-                                                         "In elementum Fake 3 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
-                                                 },
-                                             new Category
-                                                 {
-                                                     Name = "FakeCategory4",
-                                                     Description =
-                                                         "In elementum Fake 4 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
-                                                 },
-                                             new Category
-                                                 {
-                                                     Name = "FakeCategory5",
-                                                     Description =
-                                                         "In elementum Fake 5 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
-                                                 },
-                                             new Category
-                                                 {
-                                                     Name = "FakeCategory6",
-                                                     Description =
-                                                         "In elementum Fake 6 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
-                                                 },
-                                             new Category
-                                                 {
-                                                     Name = "FakeCategory7",
-                                                     Description =
-                                                         "In elementum Fake 7 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
-                                                 }
-                                         };
-            settingsCategories.ForEach(s => context.Category.Add(s));
+            var sections = new List<Sections>
+                               {
+                                   new Sections
+                                       {
+                                           Name = "Fake1",
+                                           Description =
+                                               "Fake 1. Pellentesque mauris tristique vut rhoncus cras, in parturient tempor sit eros, rhoncus urna!",
+                                       },
+                                   new Sections
+                                       {
+                                           Name = "Fake2",
+                                           Description =
+                                               "Fake 2. Pellentesque mauris tristique vut rhoncus cras, in parturient tempor sit eros, rhoncus urna!",
+                                       },
+                                   new Sections
+                                       {
+                                           Name = "Fake3",
+                                           Description =
+                                               "Fake 3. Pellentesque mauris tristique vut rhoncus cras, in parturient tempor sit eros, rhoncus urna!",
+                                       },
+                                   new Sections
+                                       {
+                                           Name = "Fake4",
+                                           Description =
+                                               "Fake 4. Pellentesque mauris tristique vut rhoncus cras, in parturient tempor sit eros, rhoncus urna!",
+                                       },
+                                   new Sections
+                                       {
+                                           Name = "Fake5",
+                                           Description =
+                                               "Fake 5. Pellentesque mauris tristique vut rhoncus cras, in parturient tempor sit eros, rhoncus urna!",
+                                       },
+                                   new Sections
+                                       {
+                                           Name = "Fake6",
+                                           Description =
+                                               "Fake 6. Pellentesque mauris tristique vut rhoncus cras, in parturient tempor sit eros, rhoncus urna!",
+                                       },
+                                   new Sections
+                                       {
+                                           Name = "Fake7",
+                                           Description =
+                                               "Fake 7. Pellentesque mauris tristique vut rhoncus cras, in parturient tempor sit eros, rhoncus urna!",
+                                       },
+                               };
+            sections.ForEach(s => context.Sections.Add(s));
             context.SaveChanges();
+
+            //var settingsCategories = new List<Category>
+            //                             {
+            //                                 new Category
+            //                                     {
+            //                                         Name = "FakeCategory1",
+            //                                         Description =
+            //                                             "In elementum Fake 1 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
+            //                                     },
+            //                                 new Category
+            //                                     {
+            //                                         Name = "FakeCategory2",
+            //                                         Description =
+            //                                             "In elementum Fake 2 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
+            //                                     },
+            //                                 new Category
+            //                                     {
+            //                                         Name = "FakeCategory3",
+            //                                         Description =
+            //                                             "In elementum Fake 3 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
+            //                                     },
+            //                                 new Category
+            //                                     {
+            //                                         Name = "FakeCategory4",
+            //                                         Description =
+            //                                             "In elementum Fake 4 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
+            //                                     },
+            //                                 new Category
+            //                                     {
+            //                                         Name = "FakeCategory5",
+            //                                         Description =
+            //                                             "In elementum Fake 5 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
+            //                                     },
+            //                                 new Category
+            //                                     {
+            //                                         Name = "FakeCategory6",
+            //                                         Description =
+            //                                             "In elementum Fake 6 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
+            //                                     },
+            //                                 new Category
+            //                                     {
+            //                                         Name = "FakeCategory7",
+            //                                         Description =
+            //                                             "In elementum Fake 7 mattis, pulvinar dapibus! Urna? Amet duis? Aenean sed tincidunt aliquet?"
+            //                                     }
+            //                             };
+            //settingsCategories.ForEach(s => context.Category.Add(s));
+            //context.SaveChanges();
 
 
         }

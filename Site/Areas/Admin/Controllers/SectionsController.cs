@@ -23,10 +23,9 @@ namespace Site.Areas.Admin.Controllers
         public virtual ActionResult Index()
         {
             var model = sections.GetAll();
-            var dto_model = new SectionViewModel();
-            Mapper.CreateMap<Sections, SectionViewModel>();
-            Mapper.Map(model, dto_model);
-            return View(dto_model as IEnumerable<SectionViewModel>);
+            var dto_model = SectionViewModel.GetDtoList(model);
+            
+            return View(dto_model);
         }
 
         public virtual ActionResult Create()

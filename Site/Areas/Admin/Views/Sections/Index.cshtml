@@ -6,9 +6,9 @@
 }
 
 <div class="span9">
-    <div class="well">
+
         @(Html.Telerik().Grid(Model)
-        .Name("OrdersGrid")
+        .Name("SectionsGrid")
         .Columns(columns =>
         {
             columns.Bound(o => o.Name);
@@ -16,5 +16,5 @@
         })
         .Pageable()
         .Sortable())
-    </div>
+
 </div>

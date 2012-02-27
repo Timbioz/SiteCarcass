@@ -666,6 +666,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core.MVC\Core.csproj">
+      <Project>{362B20BE-8228-4C73-8527-64889766BC2D}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{96E2A93E-A314-43DE-8532-BEA380D3D350}</Project>
       <Name>Data</Name>

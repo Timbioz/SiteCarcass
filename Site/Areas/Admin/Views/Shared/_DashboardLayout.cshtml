@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width" />
         @Html.Partial("_Links")
         <title>@ViewBag.Title</title>
+        @Html.MetaDescription(ViewBag.Description as string)
     </head>
     <body>
         <div class="navbar navbar-fixed-top">

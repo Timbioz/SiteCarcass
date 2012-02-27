@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity;
 using Unity.Mvc3;
 using WebSite.Data;
 using WebSite.Services;
+using WebSite.Core;
 
 
 namespace Site
@@ -28,7 +29,8 @@ namespace Site
                 .RegisterType<ISettingsService, SettingsService>(new HierarchicalLifetimeManager())
                 .RegisterType<ITopicsRepository, TopicsRepository>(new HierarchicalLifetimeManager())
                 .RegisterType<ISectionsRepository, SectionsRepository>(new HierarchicalLifetimeManager())
-                .RegisterType<ISectionsService, SectionsService>(new HierarchicalLifetimeManager());
+                .RegisterType<ISectionsService, SectionsService>(new HierarchicalLifetimeManager())
+                .RegisterType<IConfigService, ConfigService>(new HierarchicalLifetimeManager());
 
             container.RegisterControllers();
 
