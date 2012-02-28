@@ -1,5 +1,6 @@
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
+using Unity.AutoRegistration;
 using Unity.Mvc3;
 using WebSite.Data;
 using WebSite.Services;
@@ -33,6 +34,7 @@ namespace Site
                 .RegisterType<IConfigService, ConfigService>(new HierarchicalLifetimeManager());
 
             container.RegisterControllers();
+
 
             return container;
         }

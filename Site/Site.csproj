@@ -130,6 +130,9 @@
     <Reference Include="Telerik.Web.Mvc">
       <HintPath>C:\Program Files (x86)\Telerik\Extensions for ASP.NET MVC Q1 2012\Binaries\Mvc3\Telerik.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AutoRegistration">
+      <HintPath>..\packages\UnityAutoRegistration.1.0.0.1\lib\net35\Unity.AutoRegistration.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mvc3">
       <HintPath>..\packages\Unity.Mvc3.1.1\lib\Unity.Mvc3.dll</HintPath>
     </Reference>
