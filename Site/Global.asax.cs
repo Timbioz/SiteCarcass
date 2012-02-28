@@ -33,7 +33,7 @@ namespace Site
 
         protected void Application_Start()
         {
-            Database.SetInitializer<SiteDbContext>(new FakeDatabase());
+            Database.SetInitializer(new FakeDatabase());
 
             AreaRegistration.RegisterAllAreas();
 
