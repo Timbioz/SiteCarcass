@@ -546,6 +546,7 @@
     <Content Include="Areas\Admin\Style\Telerik\Telerik\treeview-line.png" />
     <Content Include="Areas\Admin\Style\Telerik\Telerik\treeview-nodes-rtl.png" />
     <Content Include="Areas\Admin\Style\Telerik\Telerik\treeview-nodes.png" />
+    <Content Include="Content\glyphicons_000_glass.png" />
     <Content Include="Scripts\MyScripts.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />

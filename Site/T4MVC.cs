@@ -351,7 +351,15 @@ namespace Links {
                       
         public static readonly string modernizr_2_0_6_development_only_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.0.6-development-only.min.js") ? Url("modernizr-2.0.6-development-only.min.js") : Url("modernizr-2.0.6-development-only.js");
                       
+        public static readonly string MyScripts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MyScripts.min.js") ? Url("MyScripts.min.js") : Url("MyScripts.js");
+                      
         public static readonly string telerik_common_min_js = Url("telerik.common.min.js");
+        public static readonly string telerik_grid_editing_min_js = Url("telerik.grid.editing.min.js");
+        public static readonly string telerik_grid_filtering_min_js = Url("telerik.grid.filtering.min.js");
+        public static readonly string telerik_grid_grouping_min_js = Url("telerik.grid.grouping.min.js");
+        public static readonly string telerik_grid_min_js = Url("telerik.grid.min.js");
+        public static readonly string telerik_grid_reordering_min_js = Url("telerik.grid.reordering.min.js");
+        public static readonly string telerik_grid_resizing_min_js = Url("telerik.grid.resizing.min.js");
         public static readonly string telerik_panelbar_min_js = Url("telerik.panelbar.min.js");
     }
 
@@ -360,6 +368,7 @@ namespace Links {
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        public static readonly string glyphicons_000_glass_png = Url("glyphicons_000_glass.png");
         public static readonly string Site_css = Url("Site.css");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class themes {

@@ -28,6 +28,11 @@ namespace Site.Areas.Admin.Controllers
             return View(model);
         }
 
+        public virtual ActionResult Details()
+        {
+            return View();
+        }
+
         public virtual ActionResult Create()
         {
             var model = new SectionCreateViewModel();

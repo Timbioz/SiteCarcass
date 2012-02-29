@@ -50,13 +50,15 @@
   <ItemGroup>
     <Compile Include="Common\EntityMapper.cs" />
     <Compile Include="Common\Utilites.cs" />
-    <Compile Include="ConfigServices\ConfigService.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
-    <Compile Include="Interfaces\IConfigService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ConfigServices\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

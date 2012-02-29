@@ -15,13 +15,9 @@ namespace WebSite.Models
         public SectionsIndexViewModel(IEnumerable<Sections> sections)
         {
             Sections = sections;
-            Names = new SelectList(sections.Select(s => s.Name), Sections);
         }
         
         public IEnumerable<Sections> Sections { get; set; }
 
-        public SelectList Names { get; set; }
-
-        
     }
 }

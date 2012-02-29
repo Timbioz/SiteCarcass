@@ -50,5 +50,10 @@
         </div>
         @Html.Partial("_Scripts")
         @RenderSection("Scripts",false)
+        <script type="text/javascript">
+            $(function () {
+                $("#accordion").accordion({ autoHeight: false });
+            });
+    </script>
     </body>
 </html>

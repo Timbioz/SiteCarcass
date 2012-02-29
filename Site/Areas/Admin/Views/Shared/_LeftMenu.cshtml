@@ -1,37 +1,40 @@
-﻿@(Html.Telerik().PanelBar()
-       .Name("PanelBar")
-       .Items(items =>
-       {
-           items.Add().Text("Разделы сайта")
-               .Expanded(true)
-               .HtmlAttributes(new { style = "font-weight: bold" })
-               .ImageUrl(Url.Content("~/Areas/Admin/Images/Glyphicons/glyphicons_144_folder_open.png"))
-               .ImageHtmlAttributes(new { style = "height: 16px" })
-               .Items(subItem =>
-               {
-                   subItem.Add()
-                       .Text("Все разделы")
-                       .HtmlAttributes(new { style = "font-weight: normal" })
-                       .Url(Url.Action(MVC.Admin.Sections.Index()))
-                       .ImageUrl(Url.Content("~/Areas/Admin/Images/Glyphicons/glyphicons_149_folder_new.png"))
-                       .ImageHtmlAttributes(new { style = "height: 14px" });
-                   subItem.Add()
-                       .Text("Создать раздел")
-                       .HtmlAttributes(new { style = "font-weight: normal" })
-                       .Url(Url.Action(MVC.Admin.Sections.Create()))
-                       .ImageUrl(Url.Content("~/Areas/Admin/Images/Glyphicons/glyphicons_145_folder_plus.png"))
-                       .ImageHtmlAttributes(new { style = "height: 14px" }); ;
-               });
-           items.Add().Text("Статьи")
-               .Items(subItem =>
-                          {
-                              subItem.Add()
-                                  .Text("Все статьи")
-                                  .Url(Url.Action(MVC.Admin.Settings.Grid()))
-                                  .ImageUrl(Url.Content("~/Areas/Admin/Images/Glyphicons/glyphicons_030_pencil.png"))
-                                  .ImageHtmlAttributes(new {style="height: 14px"});
-                              subItem.Add()
-                                  .Text("Создать");
-                          });
-           items.Add().Text("Item 2");
-       }))
+﻿
+<div id="accordion">
+    
+    <h3><a href="#"><b>Секции</b></a></h3>
+    <div>
+        <ul class="unstyled">
+            <li><i class="icon-folder-close"></i>&nbsp;@Html.ActionLink("Все секции", MVC.Admin.Sections.Index())</li>
+            <li><i class="icon-plus-sign"></i>&nbsp;@Html.ActionLink("Создать", MVC.Admin.Sections.Create())</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ul>
+    </div>
+    <h3><a href="#">Section 2</a></h3>
+    <div>
+        <ul class="unstyled">
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ul>
+    </div>
+    <h3><a href="#">Section 3</a></h3>
+    <div>
+        <ul class="unstyled">
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ul>
+    </div>
+    <h3><a href="#">Section 4</a></h3>
+    <div>
+        <ul class="unstyled">
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ul>
+    </div>
+</div>
