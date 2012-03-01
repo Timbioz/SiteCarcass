@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="span9">
+<h2>CKEditor tester</h2>
+
+<textarea id="ckeditor"></textarea>
+
+</div>
+
+@section ViewScripts
+{
+    @Html.Partial("_CkeditorScripts")
+    <script type="text/javascript">
+        $('#ckeditor').ckeditor();
+    </script>
+}
