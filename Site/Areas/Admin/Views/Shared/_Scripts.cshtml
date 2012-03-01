@@ -1,12 +1,9 @@
-﻿@(Html.Telerik().ScriptRegistrar().jQueryValidation(true)
-    .DefaultGroup(group => 
-        group.DefaultPath("~/Scripts")
-                                    .Add("jquery-ui-1.8.17.custom.min.js")
-                                    .Add("bootstrap.min.js")
-                                    .Add("jquery.validate.min.js")
-                                    .Add("jquery.validate.unobtrusive.min.js")
-                                    .Add("MyScripts.js")
-                                    .Combined(false)
-                                    .Compress(true)
-                                    .CacheDurationInDays(365))
-                                    )
+﻿@{
+    Bundles.Reference("Scripts/jquery-1.7.1.min.js");
+    Bundles.Reference("Scripts/jquery-ui-1.8.17.custom.min.js");
+    Bundles.Reference("Scripts/bootstrap.js");
+    Bundles.Reference("Scripts/jquery.validate.js");
+    Bundles.Reference("Scripts/jquery.validate.unobtrusive.js");
+    Bundles.Reference("Scripts/MyScripts.js");
+    
+}

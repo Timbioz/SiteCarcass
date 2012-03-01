@@ -50,6 +50,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,16 +62,13 @@
     <Compile Include="DalServices\SectionsService.cs" />
     <Compile Include="DalServices\SettingsService.cs" />
     <Compile Include="DalServices\TopicsService.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Interfaces\ISectionsService.cs" />
     <Compile Include="Interfaces\ISettingsService.cs" />
     <Compile Include="Interfaces\ITopicsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core.MVC\Core.csproj">
-      <Project>{362B20BE-8228-4C73-8527-64889766BC2D}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{96E2A93E-A314-43DE-8532-BEA380D3D350}</Project>
       <Name>Data</Name>
@@ -83,7 +82,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Utilites\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using AutoMapper;
-using WebSite.Core;
 
 namespace WebSite.Models
 {

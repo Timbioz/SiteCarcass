@@ -40,7 +40,6 @@ namespace Site
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            //Bootstrapper.Initialise();
         }
     }
 }

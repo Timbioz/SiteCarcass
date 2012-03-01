@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -23,6 +24,15 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,8 +52,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.46.4422.26284\lib\net20\AjaxMin.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.2.0.0\lib\net40-client\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Cassette">
+      <HintPath>..\packages\Cassette.1.1.0\lib\net40-Client\Cassette.dll</HintPath>
+    </Reference>
+    <Reference Include="Cassette.dotless.Core">
+      <HintPath>..\packages\Cassette.1.1.0\lib\net40-Client\Cassette.dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cassette.Views">
+      <HintPath>..\packages\Cassette.Views.1.1.0\lib\net40\Cassette.Views.dll</HintPath>
+    </Reference>
+    <Reference Include="Cassette.Web">
+      <HintPath>..\packages\Cassette.Web.1.1.0\lib\net40\Cassette.Web.dll</HintPath>
     </Reference>
     <Reference Include="Elmah">
       <HintPath>..\packages\elmah.corelibrary.1.2.1\lib\Elmah.dll</HintPath>
@@ -57,6 +82,9 @@
     </Reference>
     <Reference Include="Glimpse.Elmah">
       <HintPath>..\packages\Glimpse.Elmah.0.9.7\lib\net40\Glimpse.Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Jurassic">
+      <HintPath>..\packages\Jurassic.2.1.1\lib\Jurassic.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
@@ -74,6 +102,12 @@
     </Reference>
     <Reference Include="MvcContrib">
       <HintPath>..\packages\MvcContrib.Mvc3-ci.3.0.96.0\lib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Pandora">
+      <HintPath>..\packages\Cassette.1.1.0\lib\net40-Client\Pandora.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
@@ -124,9 +158,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Telerik.Web.Mvc">
-      <HintPath>C:\Program Files (x86)\Telerik\Extensions for ASP.NET MVC Q1 2012\Binaries\Mvc3\Telerik.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="WebActivator">
       <HintPath>..\packages\WebActivator.1.5\lib\net40\WebActivator.dll</HintPath>
     </Reference>
@@ -160,6 +191,7 @@
     <Compile Include="Areas\Admin\Controllers\SectionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopicsController.cs" />
+    <Compile Include="CassetteConfiguration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
@@ -534,41 +566,28 @@
     <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_347_spootify.png" />
     <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_348_stumbleupon.png" />
     <Content Include="Areas\Admin\Images\Glyphicons\glyphicons_349_readability.png" />
-    <Content Include="Areas\Admin\Style\Telerik\telerik.common.min.css" />
-    <Content Include="Areas\Admin\Style\Telerik\telerik.telerik.min.css" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\editor.png" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\imagebrowser.png" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\loading.gif" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\slider-h.gif" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\slider-v.gif" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\sprite-vertical.png" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\sprite.png" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\treeview-line.png" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\treeview-nodes-rtl.png" />
-    <Content Include="Areas\Admin\Style\Telerik\Telerik\treeview-nodes.png" />
+    <Content Include="Areas\Admin\Style\bootstrap.css" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Areas\Admin\Style\images\ui-icons_222222_256x240.png" />
+    <Content Include="Areas\Admin\Style\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Areas\Admin\Style\images\ui-icons_454545_256x240.png" />
+    <Content Include="Areas\Admin\Style\images\ui-icons_888888_256x240.png" />
+    <Content Include="Areas\Admin\Style\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Areas\Admin\Style\BootstrapImages\glyphicons-halflings-white.png" />
+    <Content Include="Areas\Admin\Style\BootstrapImages\glyphicons-halflings.png" />
+    <Content Include="Areas\Admin\Style\jquery-ui-1.8.17.custom.css" />
     <Content Include="Content\glyphicons_000_glass.png" />
+    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\MyScripts.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
-    <Content Include="Areas\Admin\Style\Bootstrap\bootstrap-responsive.min.css" />
-    <Content Include="Areas\Admin\Style\Bootstrap\bootstrap.min.css" />
-    <Content Include="Areas\Admin\Style\Bootstrap\img\glyphicons-halflings-white.png" />
-    <Content Include="Areas\Admin\Style\Bootstrap\img\glyphicons-halflings.png" />
     <Content Include="Areas\Admin\Style\dashboard.css" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_222222_256x240.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_454545_256x240.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_888888_256x240.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Areas\Admin\Style\JQui\smoothness\jquery-ui-1.8.17.custom.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -609,14 +628,6 @@
     <Content Include="Scripts\knockout-1.3.0beta.debug.js" />
     <Content Include="Scripts\knockout-1.3.0beta.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Scripts\telerik.common.min.js" />
-    <Content Include="Scripts\telerik.grid.editing.min.js" />
-    <Content Include="Scripts\telerik.grid.filtering.min.js" />
-    <Content Include="Scripts\telerik.grid.grouping.min.js" />
-    <Content Include="Scripts\telerik.grid.min.js" />
-    <Content Include="Scripts\telerik.grid.reordering.min.js" />
-    <Content Include="Scripts\telerik.grid.resizing.min.js" />
-    <Content Include="Scripts\telerik.panelbar.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -662,10 +673,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core.MVC\Core.csproj">
-      <Project>{362B20BE-8228-4C73-8527-64889766BC2D}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{96E2A93E-A314-43DE-8532-BEA380D3D350}</Project>
       <Name>Data</Name>
@@ -721,8 +728,13 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

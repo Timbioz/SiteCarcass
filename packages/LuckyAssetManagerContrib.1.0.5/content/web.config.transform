@@ -1,0 +1,12 @@
+<configuration>
+  <configSections>
+    <section name="luckyAssetManagerContrib" type="LuckyAssetManagerContrib.Configuration.AssetManagerContribSettings" allowDefinition="Everywhere" allowLocation="true" />
+  </configSections>
+  
+  <luckyAssetManagerContrib>
+	<selectPathProcessor memoryCacheDurationInMinutes="15" useMemoryCacheSlidingExpiration="false" />
+	<finalProcessor disableCombiningAssetsInDebugMode="true" />
+	<assetFileCacheManager fileCacheDurationInMinutes="30" fileCacheRegistrySaveIntervalInMinutes="1" useFileCacheSlidingExpiration="true"/>
+    <assetsHandler clientCacheDurationInDays="15" enableCompression="true" useLastModifiedHeader="true" useETagHeader="true"/>
+  </luckyAssetManagerContrib>
+</configuration>

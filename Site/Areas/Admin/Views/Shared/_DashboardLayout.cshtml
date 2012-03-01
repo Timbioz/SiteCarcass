@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@Html.Partial("_Links")
+<!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width" />
-        @Html.Partial("_Links")
         <title>@ViewBag.Title</title>
+
+        @Bundles.RenderStylesheets()
         @Html.MetaDescription(ViewBag.Description as string)
     </head>
     <body>
@@ -50,6 +52,7 @@
         </div>
         @Html.Partial("_Scripts")
         @RenderSection("Scripts",false)
+        @Bundles.RenderScripts()
         <script type="text/javascript">
             $(function () {
                 $("#accordion").accordion({ autoHeight: false });

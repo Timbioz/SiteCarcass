@@ -1,13 +1,5 @@
-﻿@(Html.Telerik().StyleSheetRegistrar()
-    .StyleSheets(group =>
-            group.AddGroup("Admin", style =>
-                                style.DefaultPath("~/Areas/Admin/Style")
-                                .Add("Bootstrap/bootstrap.min.css")
-                                .Add("JQui/smoothness/jquery-ui-1.8.17.custom.css")
-                                .Add("Telerik/telerik.common.min.css")
-                                .Add("Telerik/telerik.telerik.min.css")
-                                .Add("dashboard.css")
-                                .Combined(true)
-                                .Compress(true)
-                                .CacheDurationInDays(365))))
-
+﻿@{
+    Bundles.Reference("Areas/Admin/Style/bootstrap.css");
+    Bundles.Reference("Areas/Admin/Style/jquery-ui-1.8.17.custom.css");
+    Bundles.Reference("Areas/Admin/Style/dashboard.css");
+}
