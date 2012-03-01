@@ -51,8 +51,9 @@
             
         </div>
         @Html.Partial("_Scripts")
-        @RenderSection("Scripts",false)
         @Bundles.RenderScripts()
+        @RenderSection("ViewScripts",false)
+        
         <script type="text/javascript">
             $(function () {
                 $("#accordion").accordion({ autoHeight: false });
