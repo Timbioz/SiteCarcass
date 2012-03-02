@@ -38,7 +38,7 @@ namespace T4MVC {
         public Site.Areas.Admin.Controllers.DashboardController Dashboard = new Site.Areas.Admin.Controllers.T4MVC_DashboardController();
         public Site.Areas.Admin.Controllers.SectionsController Sections = new Site.Areas.Admin.Controllers.T4MVC_SectionsController();
         public Site.Areas.Admin.Controllers.SettingsController Settings = new Site.Areas.Admin.Controllers.T4MVC_SettingsController();
-        public Site.Areas.Admin.Controllers.TopicsController Topics = new Site.Areas.Admin.Controllers.T4MVC_TopicsController();
+        public Site.Areas.Admin.Controllers.PostsController Topics = new Site.Areas.Admin.Controllers.T4MVC_TopicsController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();
     }
 }

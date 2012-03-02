@@ -21,7 +21,7 @@ namespace Site
                             x.For<ISiteSettingsRepository>().Use<SiteSettingsRepository>();
                             x.For<ICategoryRepository>().Use<CategoryRepository>();
                             x.For<ISettingsService>().Use<SettingsService>();
-                            x.For<ITopicsRepository>().Use<TopicsRepository>();
+                            x.For<IPostsRepository>().Use<PostsRepository>();
                             x.For<ISectionsRepository>().Use<SectionsRepository>();
                             x.For<ISectionsService>().Use<SectionsService>();
                         });

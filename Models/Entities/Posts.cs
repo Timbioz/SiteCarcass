@@ -6,10 +6,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebSite.Models
 {
-    public class Topics
+    public class Posts
     {
 
-        public Topics()
+        public Posts()
         {
             IsPublished = false;
             IsCommentsEnabled = true;
@@ -18,7 +18,7 @@ namespace WebSite.Models
         }
 
         [Key]
-        public int TopicId { get; set; }
+        public int PostId { get; set; }
 
         [Required]
         public int CategoryId { get; set; }
@@ -81,6 +81,8 @@ namespace WebSite.Models
         public bool? IsCommentsEnabled { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public virtual ICollection<Tags> Tags { get; set; }
 
         public virtual ICollection<Ratings> Rating { get; set; }
 

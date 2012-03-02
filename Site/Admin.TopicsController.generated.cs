@@ -21,12 +21,12 @@ using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
 namespace Site.Areas.Admin.Controllers {
-    public partial class TopicsController {
+    public partial class PostsController {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public TopicsController() { }
+        public PostsController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected TopicsController(Dummy d) { }
+        protected PostsController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result) {
@@ -36,13 +36,13 @@ namespace Site.Areas.Admin.Controllers {
 
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public TopicsController Actions { get { return MVC.Admin.Topics; } }
+        public PostsController Actions { get { return MVC.Admin.Topics; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "Admin";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Topics";
+        public readonly string Name = "Posts";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Topics";
+        public const string NameConst = "Posts";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -65,12 +65,12 @@ namespace Site.Areas.Admin.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
-            public readonly string Index = "~/Areas/Admin/Views/Topics/Index.cshtml";
+            public readonly string Index = "~/Areas/Admin/Views/Posts/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public class T4MVC_TopicsController: Site.Areas.Admin.Controllers.TopicsController {
+    public class T4MVC_TopicsController: Site.Areas.Admin.Controllers.PostsController {
         public T4MVC_TopicsController() : base(Dummy.Instance) { }
 
         public override System.Web.Mvc.ActionResult Index() {

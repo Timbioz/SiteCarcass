@@ -7,12 +7,12 @@ using WebSite.Data;
 
 namespace WebSite.Services
 {
-    public interface ITopicsService
+    public interface IPostsService
     {
-        Topics GetTopic(int id);
-        IEnumerable<Topics> GetAll();
-        bool CreateTopic(Topics topic);
-        bool UpdateTopic(Topics topic);
+        Posts GetTopic(int id);
+        IEnumerable<Posts> GetAll();
+        bool CreateTopic(Posts post);
+        bool UpdateTopic(Posts post);
         bool DeleteTopic(int id);
         void DisposeCore();
     }

@@ -12,7 +12,7 @@ namespace WebSite.Models
         public int CommentId { get; set; }
 
         [Required]
-        public int TopicId { get; set; }
+        public int PostId { get; set; }
 
         public string Commenter { get; set; }
 
@@ -29,6 +29,6 @@ namespace WebSite.Models
 
         public bool? IsEditable { get; set; }
 
-        public virtual Topics Topic { get; set; }
+        public virtual Posts Post { get; set; }
     }
 }

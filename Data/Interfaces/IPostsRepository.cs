@@ -6,7 +6,7 @@ using WebSite.Models;
 
 namespace WebSite.Data
 {
-    public interface ITopicsRepository : IRepository<Topics>
+    public interface IPostsRepository : IRepository<Posts>
     {
     }
 }

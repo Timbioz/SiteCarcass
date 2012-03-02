@@ -19,14 +19,14 @@ namespace WebSite.Models
         [StringLength(25, ErrorMessage = "Имя должно содержать не более 25 символов")]
         public string Name { get; set; }
 
-        [StringLength(500, ErrorMessage = "...должно содержать не более 500 символов")]
+        [StringLength(500, ErrorMessage = "...не более 500 символов")]
         public string Description { get; set; }
 
         public virtual Sections Section { get; set; }
 
         public virtual ICollection<Settings> Settings { get; set; }
 
-        public virtual ICollection<Topics> Topics { get; set; }
+        public virtual ICollection<Posts> Posts { get; set; }
 
     }
 }

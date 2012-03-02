@@ -6,9 +6,9 @@ using WebSite.Models;
 
 namespace WebSite.Data
 {
-    public class TopicsRepository : RepositoryBase<Topics>, ITopicsRepository
+    public class PostsRepository : RepositoryBase<Posts>, IPostsRepository
     {
-        public TopicsRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
+        public PostsRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
         {
         }
     }

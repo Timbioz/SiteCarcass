@@ -7,33 +7,33 @@ using WebSite.Models;
 
 namespace WebSite.Services
 {
-    public class TopicsService : ITopicsService
+    public class PostsService : IPostsService
     {
-        private readonly ITopicsRepository topicsRepository;
+        private readonly IPostsRepository _postsRepository;
         private readonly IUnitOfWork unitOfWork;
 
-        public TopicsService(ITopicsRepository topicsRepository, IUnitOfWork unitOfWork)
+        public PostsService(IPostsRepository _postsRepository, IUnitOfWork unitOfWork)
         {
-            this.topicsRepository = topicsRepository;
+            this._postsRepository = _postsRepository;
             this.unitOfWork = unitOfWork;
         }
 
-        public Topics GetTopic(int id)
+        public Posts GetTopic(int id)
         {
-            return topicsRepository.GetById(id);
+            return _postsRepository.GetById(id);
         }
 
-        public IEnumerable<Topics> GetAll()
+        public IEnumerable<Posts> GetAll()
         {
-            return topicsRepository.GetAll();
+            return _postsRepository.GetAll();
         }
 
-        public bool CreateTopic(Topics topic)
+        public bool CreateTopic(Posts post)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateTopic(Topics topic)
+        public bool UpdateTopic(Posts post)
         {
             throw new NotImplementedException();
         }

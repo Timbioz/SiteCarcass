@@ -10,12 +10,15 @@ namespace WebSite.Data
 {
     public class SiteDbContext : DbContext
     {
+        public SiteDbContext(){}
+
         public DbSet<Settings> Settings { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Sections> Sections { get; set; }
-        public DbSet<Topics> Topics { get; set; }
+        public DbSet<Posts> Posts { get; set; }
         public DbSet<Comments> Comments { get; set; }
         public DbSet<Ratings> Ratings { get; set; }
+        public DbSet<Tags> Tags { get; set; }
 
         public virtual void Commit()
         {

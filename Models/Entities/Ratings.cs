@@ -11,7 +11,7 @@ namespace WebSite.Models
         [Key]
         public int RatingId { get; set; }
 
-        public int TopicId { get; set; }
+        public int PostId { get; set; }
 
         public DateTime Date { get; set; }
 
@@ -21,6 +21,6 @@ namespace WebSite.Models
 
         public float Rate { get; set; }
 
-        public virtual Topics Topic { get; set; }
+        public virtual Posts Post { get; set; }
     }
 }

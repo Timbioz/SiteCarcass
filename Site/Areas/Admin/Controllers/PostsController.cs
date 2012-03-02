@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Site.Areas.Admin.Controllers
 {
-    public partial class TopicsController : BaseController
+    public partial class PostsController : BaseController
     {
         //
-        // GET: /Admin/Topics/
+        // GET: /Admin/Posts/
 
         public virtual ActionResult Index()
         {
