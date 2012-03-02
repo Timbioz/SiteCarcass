@@ -15,6 +15,8 @@ namespace WebSite.Data
         public DbSet<Settings> Settings { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Sections> Sections { get; set; }
+        public DbSet<Pages> Pages { get; set; }
+        public DbSet<Content> Content { get; set; }
         public DbSet<Posts> Posts { get; set; }
         public DbSet<Comments> Comments { get; set; }
         public DbSet<Ratings> Ratings { get; set; }

@@ -36,7 +36,7 @@ namespace Site.Areas.Admin.Controllers {
 
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public PostsController Actions { get { return MVC.Admin.Topics; } }
+        public PostsController Actions { get { return MVC.Admin.Posts; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "Admin";
         [GeneratedCode("T4MVC", "2.0")]
@@ -65,13 +65,14 @@ namespace Site.Areas.Admin.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
+            public readonly string Create = "~/Areas/Admin/Views/Posts/Create.cshtml";
             public readonly string Index = "~/Areas/Admin/Views/Posts/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public class T4MVC_TopicsController: Site.Areas.Admin.Controllers.PostsController {
-        public T4MVC_TopicsController() : base(Dummy.Instance) { }
+    public class T4MVC_PostsController: Site.Areas.Admin.Controllers.PostsController {
+        public T4MVC_PostsController() : base(Dummy.Instance) { }
 
         public override System.Web.Mvc.ActionResult Index() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Index);

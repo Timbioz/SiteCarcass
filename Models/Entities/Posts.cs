@@ -20,6 +20,8 @@ namespace WebSite.Models
         [Key]
         public int PostId { get; set; }
 
+        public int Views { get; set; }
+
         [Required]
         public int CategoryId { get; set; }
 

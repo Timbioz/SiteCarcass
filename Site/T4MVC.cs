@@ -36,9 +36,9 @@ namespace T4MVC {
         public readonly string Name = "Admin";
         public Site.Areas.Admin.Controllers.BaseController Base = new Site.Areas.Admin.Controllers.T4MVC_BaseController();
         public Site.Areas.Admin.Controllers.DashboardController Dashboard = new Site.Areas.Admin.Controllers.T4MVC_DashboardController();
+        public Site.Areas.Admin.Controllers.PostsController Posts = new Site.Areas.Admin.Controllers.T4MVC_PostsController();
         public Site.Areas.Admin.Controllers.SectionsController Sections = new Site.Areas.Admin.Controllers.T4MVC_SectionsController();
         public Site.Areas.Admin.Controllers.SettingsController Settings = new Site.Areas.Admin.Controllers.T4MVC_SettingsController();
-        public Site.Areas.Admin.Controllers.PostsController Topics = new Site.Areas.Admin.Controllers.T4MVC_TopicsController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();
     }
 }
@@ -329,7 +329,8 @@ namespace Links {
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string AjaxLogin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/AjaxLogin.min.js") ? Url("AjaxLogin.min.js") : Url("AjaxLogin.js");
                       
-        public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+        public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
+                      
         public static readonly string jquery_1_7_1_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.7.1-vsdoc.min.js") ? Url("jquery-1.7.1-vsdoc.min.js") : Url("jquery-1.7.1-vsdoc.js");
                       
         public static readonly string jquery_1_7_1_min_js = Url("jquery-1.7.1.min.js");
@@ -353,14 +354,6 @@ namespace Links {
                       
         public static readonly string MyScripts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MyScripts.min.js") ? Url("MyScripts.min.js") : Url("MyScripts.js");
                       
-        public static readonly string telerik_common_min_js = Url("telerik.common.min.js");
-        public static readonly string telerik_grid_editing_min_js = Url("telerik.grid.editing.min.js");
-        public static readonly string telerik_grid_filtering_min_js = Url("telerik.grid.filtering.min.js");
-        public static readonly string telerik_grid_grouping_min_js = Url("telerik.grid.grouping.min.js");
-        public static readonly string telerik_grid_min_js = Url("telerik.grid.min.js");
-        public static readonly string telerik_grid_reordering_min_js = Url("telerik.grid.reordering.min.js");
-        public static readonly string telerik_grid_resizing_min_js = Url("telerik.grid.resizing.min.js");
-        public static readonly string telerik_panelbar_min_js = Url("telerik.panelbar.min.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

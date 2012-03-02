@@ -59,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Comments.cs" />
+    <Compile Include="Entities\Content.cs" />
+    <Compile Include="Entities\Pages.cs" />
     <Compile Include="Entities\Ratings.cs" />
     <Compile Include="Entities\Sections.cs" />
     <Compile Include="Entities\Settings.cs" />

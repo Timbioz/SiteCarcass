@@ -34,7 +34,7 @@ namespace Site
         protected void Application_Start()
         {
             Database.SetInitializer<SiteDbContext>(new FakeDatabase());
-
+            
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
