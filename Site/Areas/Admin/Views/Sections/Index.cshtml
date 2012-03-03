@@ -1,14 +1,38 @@
-﻿@using MvcContrib.UI.Grid
-@model WebSite.Models.SectionsIndexViewModel
+﻿@model WebSite.Models.SectionsIndexViewModel
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_DashboardLayout.cshtml";
-    
 }
 <div class="span9">
-    @Html.Grid(Model.Sections).Attributes(@class => "table table-striped table-bordered table-condensed").Columns(col =>
-                    {
-                        col.For(cust => Html.ActionLink(cust.Name, "Create",new{id=cust.SectionId}));
-                        col.For(p => p.Description).HeaderAttributes(style=>"background-color: black");
-                    })
+    
+    @using (Ajax.BeginForm("DeleteSelected", "Sections", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "sectionsindexgrid", OnBegin = "return ConfirmOnDelete();" }))
+    {
+    
+        <div id="sectionsindexgrid">
+       
+            @Html.Partial("SectionsPartials/_IndexGrid", Model)
+        
+        </div>
+        <input type="text" name=""/>
+        
+        <a class="btn btn-success submit-link" href="#"><i class="icon-ok-sign"></i>  Отправить</a>
+        
+    }
+  
 </div>
+@section ViewScripts
+{
+    <script type="text/javascript">
+    function ConfirmOnDelete() {
+        dhtmlx.confirm({ title: "Confirm", text: "Continue?", callback: function () { return true; } });
+    }
+
+    
+
+        
+    
+
+
+    </script>
+}

@@ -22,6 +22,7 @@ namespace Site
             bundles.AddPerIndividualFile<ScriptBundle>("Scripts");
             bundles.AddPerIndividualFile<StylesheetBundle>("Areas/Admin/Style");
 
+
             // To combine files, try something like this instead:
             //   bundles.Add<StylesheetBundle>("Content");
             // In production mode, all of ~/Content will be combined into a single bundle.

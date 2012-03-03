@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web.Mvc;
 
 namespace WebSite.Models
 {
@@ -35,5 +36,6 @@ namespace WebSite.Models
             this.Settings = settings;
             return this;
         }
+
     }
 }

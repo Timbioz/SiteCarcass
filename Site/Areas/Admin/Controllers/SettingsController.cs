@@ -40,17 +40,7 @@ namespace Site.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        public virtual ActionResult Grid(GridSortOptions sort, int? page)
-        {
-            var model = settings.GetAllSettings().AsPagination(page ?? 1, 10) as IEnumerable<Settings>;
-
-            if (sort.Column != null)
-            {
-                model = model.OrderBy(sort.Column, sort.Direction);
-            }
-            ViewData["sort"] = sort;
-            return View(model);
-        }
+     
 
         
 

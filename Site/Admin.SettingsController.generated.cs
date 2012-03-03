@@ -31,11 +31,6 @@ namespace Site.Areas.Admin.Controllers {
             return RedirectToRoute(callInfo.RouteValueDictionary);
         }
 
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public System.Web.Mvc.ActionResult Grid() {
-            return new T4MVC_ActionResult(Area, Name, ActionNames.Grid);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public SettingsController Actions { get { return MVC.Admin.Settings; } }
@@ -53,14 +48,12 @@ namespace Site.Areas.Admin.Controllers {
         public class ActionNamesClass {
             public readonly string Index = "Index";
             public readonly string Create = "Create";
-            public readonly string Grid = "Grid";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants {
             public const string Index = "Index";
             public const string Create = "Create";
-            public const string Grid = "Grid";
         }
 
 
@@ -70,7 +63,6 @@ namespace Site.Areas.Admin.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
             public readonly string Create = "~/Areas/Admin/Views/Settings/Create.cshtml";
-            public readonly string Grid = "~/Areas/Admin/Views/Settings/Grid.cshtml";
             public readonly string Index = "~/Areas/Admin/Views/Settings/Index.cshtml";
         }
     }
@@ -92,13 +84,6 @@ namespace Site.Areas.Admin.Controllers {
         public override System.Web.Mvc.ActionResult Create(WebSite.Models.Settings siteSettings) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Create);
             callInfo.RouteValueDictionary.Add("siteSettings", siteSettings);
-            return callInfo;
-        }
-
-        public override System.Web.Mvc.ActionResult Grid(MvcContrib.UI.Grid.GridSortOptions sort, int? page) {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Grid);
-            callInfo.RouteValueDictionary.Add("sort", sort);
-            callInfo.RouteValueDictionary.Add("page", page);
             return callInfo;
         }
 

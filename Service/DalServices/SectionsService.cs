@@ -62,7 +62,13 @@ namespace WebSite.Services
 
         public bool DeleteSection(int id)
         {
-            throw new NotImplementedException();
+            sectionsRepository.Delete(e => e.SectionId == id);
+            unitOfWork.Commit();
+            if (sectionsRepository != null && unitOfWork != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         public override void DisposeCore()

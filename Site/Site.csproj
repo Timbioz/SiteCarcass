@@ -1004,9 +1004,12 @@
     <Content Include="Areas\Admin\Style\BootstrapImages\glyphicons-halflings-white.png" />
     <Content Include="Areas\Admin\Style\BootstrapImages\glyphicons-halflings.png" />
     <Content Include="Areas\Admin\Style\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Areas\Admin\Style\message_solid.css" />
     <Content Include="bin\CKFinder.dll" />
+    <Content Include="Chirpy.ReadMe.txt" />
     <Content Include="Content\glyphicons_000_glass.png" />
     <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\message.js" />
     <Content Include="Scripts\MyScripts.js" />
     <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
     <Content Include="Areas\Admin\Style\dashboard.css" />
@@ -1130,9 +1133,6 @@
     <Content Include="Areas\Admin\Views\Settings\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\Settings\Grid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Areas\Admin\Views\Shared\_LeftMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -1146,6 +1146,7 @@
     <Content Include="Areas\Admin\Views\Shared\_CkeditorScripts.cshtml" />
     <None Include="Areas\Admin\Plugins\CKfinder\plugins\fileeditor\codemirror\LICENSE" />
     <None Include="Areas\Admin\Plugins\CKfinder\userfiles\.htaccess" />
+    <Content Include="Areas\Admin\Views\Shared\SectionsPartials\_IndexGrid.cshtml" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>

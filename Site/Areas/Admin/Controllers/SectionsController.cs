@@ -27,10 +27,10 @@ namespace Site.Areas.Admin.Controllers
             return View(model);
         }
 
-        public virtual ActionResult Details()
-        {
-            return View();
-        }
+        //public virtual ActionResult Details()
+        //{
+        //    return View();
+        //}
 
         public virtual ActionResult Create()
         {
@@ -46,6 +46,29 @@ namespace Site.Areas.Admin.Controllers
                 return View(model);
             }
             sections.CreateMapping(model);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public virtual ActionResult DeleteSelected(int[] select)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+
+            foreach (var i in select)
+            {
+                sections.DeleteSection(i);
+            }
+
+            if (Request.IsAjaxRequest())
+            {
+                var sect = sections.GetAll();
+                var model1 = new SectionsIndexViewModel(sect);
+                return PartialView("SectionsPartials/_IndexGrid", model1);
+            }
+
             return RedirectToAction("Index");
         }
 

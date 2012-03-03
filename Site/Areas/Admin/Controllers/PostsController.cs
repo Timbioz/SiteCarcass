@@ -18,6 +18,7 @@ namespace Site.Areas.Admin.Controllers
 
         public virtual ActionResult Create()
         {
+            
             return View();
         }
     }
