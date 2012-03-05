@@ -31,6 +31,16 @@ namespace Site.Areas.Admin.Controllers {
             return RedirectToRoute(callInfo.RouteValueDictionary);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult Index() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.Index);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult DeleteSelected() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.DeleteSelected);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public SectionsController Actions { get { return MVC.Admin.Sections; } }
@@ -48,12 +58,14 @@ namespace Site.Areas.Admin.Controllers {
         public class ActionNamesClass {
             public readonly string Index = "Index";
             public readonly string Create = "Create";
+            public readonly string DeleteSelected = "DeleteSelected";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants {
             public const string Index = "Index";
             public const string Create = "Create";
+            public const string DeleteSelected = "DeleteSelected";
         }
 
 
@@ -71,8 +83,10 @@ namespace Site.Areas.Admin.Controllers {
     public class T4MVC_SectionsController: Site.Areas.Admin.Controllers.SectionsController {
         public T4MVC_SectionsController() : base(Dummy.Instance) { }
 
-        public override System.Web.Mvc.ActionResult Index() {
+        public override System.Web.Mvc.ActionResult Index(MvcContrib.UI.Grid.GridSortOptions sort, int? page) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Index);
+            callInfo.RouteValueDictionary.Add("sort", sort);
+            callInfo.RouteValueDictionary.Add("page", page);
             return callInfo;
         }
 
@@ -84,6 +98,13 @@ namespace Site.Areas.Admin.Controllers {
         public override System.Web.Mvc.ActionResult Create(WebSite.Models.SectionCreateViewModel model) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Create);
             callInfo.RouteValueDictionary.Add("model", model);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult DeleteSelected(int[] select, MvcContrib.UI.Grid.GridSortOptions sort) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.DeleteSelected);
+            callInfo.RouteValueDictionary.Add("select", select);
+            callInfo.RouteValueDictionary.Add("sort", sort);
             return callInfo;
         }
 

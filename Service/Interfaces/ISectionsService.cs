@@ -15,6 +15,7 @@ namespace WebSite.Services
         bool CreateMapping(object viewModel);
         bool UpdateSection(Sections section);
         bool DeleteSection(int id);
+        bool DeleteGroup(IEnumerable<int> id);
         void DisposeCore();
     }
 }

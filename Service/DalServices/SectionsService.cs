@@ -71,6 +71,20 @@ namespace WebSite.Services
             return false;
         }
 
+        public bool DeleteGroup(IEnumerable<int> id)
+        {
+            foreach (var i in id)
+            {
+                sectionsRepository.Delete(e => e.SectionId == i);
+            }
+            unitOfWork.Commit();
+            if (sectionsRepository != null && unitOfWork != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public override void DisposeCore()
         {
             if (unitOfWork != null)

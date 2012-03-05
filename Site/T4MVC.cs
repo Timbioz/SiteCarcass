@@ -335,6 +335,8 @@ namespace Links {
                       
         public static readonly string jquery_1_7_1_min_js = Url("jquery-1.7.1.min.js");
         public static readonly string jquery_ui_1_8_17_custom_min_js = Url("jquery-ui-1.8.17.custom.min.js");
+        public static readonly string jquery_notify_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.notify.min.js") ? Url("jquery.notify.min.js") : Url("jquery.notify.js");
+                      
         public static readonly string jquery_unobtrusive_ajax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.unobtrusive-ajax.min.js") ? Url("jquery.unobtrusive-ajax.min.js") : Url("jquery.unobtrusive-ajax.js");
                       
         public static readonly string jquery_unobtrusive_ajax_min_js = Url("jquery.unobtrusive-ajax.min.js");

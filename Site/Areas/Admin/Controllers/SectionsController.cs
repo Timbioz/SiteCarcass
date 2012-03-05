@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcContrib.UI.Grid;
 using WebSite.Services;
 using WebSite.Models;
-using WebSite.Data;
-using AutoMapper;
+using MvcContrib.Sorting;
+using MvcContrib.Pagination;
+
 
 namespace Site.Areas.Admin.Controllers
 {
@@ -20,10 +23,14 @@ namespace Site.Areas.Admin.Controllers
             this.sections = sections;
         }
 
-        public virtual ActionResult Index()
+        public virtual ActionResult Index(GridSortOptions sort, int? page)
         {
             var sect = sections.GetAll();
+            if (sort.Column != null)
+                sect = sect.OrderBy(sort.Column, sort.Direction);
+            sect = sect.AsPagination(page ?? 1, 5);
             var model = new SectionsIndexViewModel(sect);
+            ViewData["sort"] = sort;
             return View(model);
         }
 
@@ -50,23 +57,24 @@ namespace Site.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public virtual ActionResult DeleteSelected(int[] select)
+        public virtual ActionResult DeleteSelected(int[] select, GridSortOptions sort)
         {
             if (!ModelState.IsValid)
-            {
                 return RedirectToAction("Index");
-            }
-
-            foreach (var i in select)
-            {
-                sections.DeleteSection(i);
-            }
+            var count = select.Count();
+            if (select != null)
+                sections.DeleteGroup(select);
 
             if (Request.IsAjaxRequest())
             {
+                ViewData["Delcount"] = count.ToString();
                 var sect = sections.GetAll();
-                var model1 = new SectionsIndexViewModel(sect);
-                return PartialView("SectionsPartials/_IndexGrid", model1);
+                if (sort.Column != null)
+                {
+                    sect = sect.OrderBy(sort.Column, sort.Direction);
+                }
+                var model = new SectionsIndexViewModel(sect);
+                return PartialView("SectionsPartials/_IndexGrid", model);
             }
 
             return RedirectToAction("Index");
