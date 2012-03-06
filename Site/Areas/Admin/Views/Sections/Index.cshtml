@@ -35,26 +35,76 @@
 @section ViewScripts
 {
     <script type="text/javascript">
-    $("input:checkbox").click(function () {
-        if ($("input:checkbox:checked").length == 0) {
-            $(".forchecked").css("display", "none");
-        } else {
-            $(".forchecked").css("display", "block");
+
+    //$('a[href*="Direction"]').addClass("ajax-links");
+        $('th#ajax a').livequery(function() {
+            $(this).addClass("ajax-links");
+        });
+    $(document).ready(function () {
+
+        $("*.ajax-links").css("color", "red");
+        
+        //References
+        var loading = $("#loading");
+        var container = $("#sectionsindexgrid");
+        var link;
+
+        //Manage click events
+        $("a.ajax-links").click(function (e) {
+            //prevent default action
+            e.preventDefault();
+
+            //show the loading bar
+            //showLoading();
+            container.slideUp();
+
+            //define the target and get content then load it to container
+            link = $(this).attr("href");
+            container.load(link, hideLoading);
+            container.slideDown();
+
+        });
+
+        //show loading bar
+        function showLoading() {
+            loading
+.css({ visibility: "visible" })
+.css({ opacity: "1" })
+.css({ display: "block" })
+;
         }
+        //hide loading bar
+        function hideLoading() {
+            loading.fadeTo(1000, 0);
+            
+        };
     });
 
-    function Diss() {
-        $(".forchecked").css("display", "none");
-    }
-    $('.my-modal').modal('hide');
-    function OnClik() {
-        var container = $("#notify-container").notify();
-        var delcount = document.getElementById('delcount').value;
-        container.notify("create", "default", {
-            title: "Удаление прошло успешно",
-            text: "Количество удаленных разделов: " + delcount
+
+
+
+
+
+        $("input:checkbox").click(function () {
+            if ($("input:checkbox:checked").length == 0) {
+                $(".forchecked").css("display", "none");
+            } else {
+                $(".forchecked").css("display", "block");
+            }
         });
-    }
+    
+        function Diss() {
+            $(".forchecked").css("display", "none");
+        }
+        $('.my-modal').modal('hide');
+        function OnClik() {
+            var container = $("#notify-container").notify();
+            var delcount = document.getElementById('delcount').value;
+            container.notify("create", "default", {
+                title: "Удаление прошло успешно",
+                text: "Количество удаленных разделов: " + delcount
+            });
+        }
 
     </script>
 }
