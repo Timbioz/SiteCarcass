@@ -6,10 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcContrib.UI.Grid;
+using PagedList;
 using WebSite.Services;
 using WebSite.Models;
 using MvcContrib.Sorting;
-using MvcContrib.Pagination;
 
 
 namespace Site.Areas.Admin.Controllers
@@ -22,14 +22,14 @@ namespace Site.Areas.Admin.Controllers
         {
             this.sections = sections;
         }
-
+        //!+Index
         public virtual ActionResult Index(GridSortOptions sort, int? page)
         {
+            var pageNumber = page ?? 1;
             var sect = sections.GetAll();
             if (sort.Column != null)
                 sect = sect.OrderBy(sort.Column, sort.Direction);
-            sect = sect.AsPagination(page ?? 1, 5);
-            var model = new SectionsIndexViewModel(sect);
+            var model = new SectionsIndexViewModel(sect, pageNumber, 20);
             ViewData["sort"] = sort;
             return View(model);
         }
@@ -38,13 +38,13 @@ namespace Site.Areas.Admin.Controllers
         //{
         //    return View();
         //}
-
+        //!+Create /get
         public virtual ActionResult Create()
         {
             var model = new SectionCreateViewModel();
             return View(model);
         }
-
+        //!+Create /post
         [HttpPost]
         public virtual ActionResult Create(SectionCreateViewModel model)
         {
@@ -55,25 +55,24 @@ namespace Site.Areas.Admin.Controllers
             sections.CreateMapping(model);
             return RedirectToAction("Index");
         }
-
+        //!+DeleteSelected /post/ajax
         [HttpPost]
-        public virtual ActionResult DeleteSelected(int[] select, GridSortOptions sort)
+        public virtual ActionResult DeleteSelected(int[] select, GridSortOptions sort, int? page)
         {
             if (!ModelState.IsValid)
                 return RedirectToAction("Index");
             var count = select.Count();
             if (select != null)
                 sections.DeleteGroup(select);
-
+            //!ajax
             if (Request.IsAjaxRequest())
             {
+                var pageNumber = page ?? 1;
                 ViewData["Delcount"] = count.ToString();
                 var sect = sections.GetAll();
                 if (sort.Column != null)
-                {
                     sect = sect.OrderBy(sort.Column, sort.Direction);
-                }
-                var model = new SectionsIndexViewModel(sect);
+                var model = new SectionsIndexViewModel(sect, pageNumber, 20);
                 return PartialView("SectionsPartials/_IndexGrid", model);
             }
 

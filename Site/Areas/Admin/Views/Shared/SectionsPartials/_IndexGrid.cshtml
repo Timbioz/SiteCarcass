@@ -1,6 +1,8 @@
-﻿@using MvcContrib.Pagination
-@using MvcContrib.UI.Pager
+﻿
+@using MvcContrib
 @using MvcContrib.UI.Grid
+@using PagedList
+@using PagedList.Mvc
 @model WebSite.Models.SectionsIndexViewModel
 
 @(Html.Grid(Model.Sections).Sort(ViewData["sort"] as GridSortOptions).Attributes(@class => "table table-striped table-bordered table-condensed").Columns(col =>
@@ -8,6 +10,7 @@
                         col.Custom(@<text><input type="checkbox" name="select" value="@item.SectionId"/></text>);
                         col.For(cust => Html.ActionLink(cust.Name, "Create", new { id = cust.SectionId })).Named("Раздел").SortColumnName("Name");
                         col.For(p => p.Description).Sortable(true).Named("Описание раздела");
+                        col.Custom(@<text><input type="checkbox" name="select" value="@item.SectionId"/></text>);
                     }))
-@Html.Pager((IPagination)Model)
+@Html.PagedListPager(Model.Sections, page => Url.Action("Index", new { page }) )
 <input type="hidden" id="delcount" value="@ViewData["Delcount"]">

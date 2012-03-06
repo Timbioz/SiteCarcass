@@ -101,10 +101,11 @@ namespace Site.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult DeleteSelected(int[] select, MvcContrib.UI.Grid.GridSortOptions sort) {
+        public override System.Web.Mvc.ActionResult DeleteSelected(int[] select, MvcContrib.UI.Grid.GridSortOptions sort, int? page) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.DeleteSelected);
             callInfo.RouteValueDictionary.Add("select", select);
             callInfo.RouteValueDictionary.Add("sort", sort);
+            callInfo.RouteValueDictionary.Add("page", page);
             return callInfo;
         }
 

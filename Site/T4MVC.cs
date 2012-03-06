@@ -356,6 +356,16 @@ namespace Links {
                       
         public static readonly string MyScripts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MyScripts.min.js") ? Url("MyScripts.min.js") : Url("MyScripts.js");
                       
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class PagedList {
+            private const string URLPATH = "~/Scripts/PagedList";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string PagedList_Mvc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PagedList.Mvc.min.js") ? Url("PagedList.Mvc.min.js") : Url("PagedList.Mvc.js");
+                          
+            public static readonly string PagedList_Mvc_Template_html = Url("PagedList.Mvc.Template.html");
+        }
+    
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -364,6 +374,7 @@ namespace Links {
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string glyphicons_000_glass_png = Url("glyphicons_000_glass.png");
+        public static readonly string PagedList_css = Url("PagedList.css");
         public static readonly string Site_css = Url("Site.css");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class themes {

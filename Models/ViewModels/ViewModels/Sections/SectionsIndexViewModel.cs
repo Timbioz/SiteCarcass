@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using AutoMapper;
+using PagedList;
 
 
 namespace WebSite.Models
@@ -12,12 +14,12 @@ namespace WebSite.Models
     {
         public SectionsIndexViewModel(){}
 
-        public SectionsIndexViewModel(IEnumerable<Sections> sections)
+        public SectionsIndexViewModel(IEnumerable<Sections> sections, int page = 1, int pages = 10)
         {
-            Sections = sections;
+            Sections = sections.ToPagedList(page, pages);
         }
         
-        public IEnumerable<Sections> Sections { get; set; }
+        public IPagedList<Sections> Sections { get; set; }
 
     }
 
