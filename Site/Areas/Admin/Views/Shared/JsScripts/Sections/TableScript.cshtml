@@ -1,40 +1,55 @@
-﻿ <script type="text/javascript">
-    $(document).ready(function () {
+﻿
+      <script type="text/javascript">
 
-        $('#datatable').dataTable({
-            "bServerSide": true,
-            bJQueryUI: true,
-            sPaginationType: 'full_numbers',
-            "sAjaxSource": "Sections/AjaxDataTableHandler",
-            //"bProcessing": true,
-            "aoColumns": [
-                        {
-                            "sName": "ID",
-                            "bSearchable": false,
-                            "bSortable": false,
-                            "fnRender": function (oObj) {
-                                return @Html.
+          $(document).ready(function() {
 
+              var oTable = $('#datatable').dataTable({
+                  "bServerSide": true,
+                  bJQueryUI: true,
+                  sPaginationType: 'full_numbers',
+                  "sAjaxSource": "Sections/AjaxDataTableHandler",
+                  "bProcessing": true,
+                  "aoColumns": [
+                      {
+                          "sName": "ID",
+                          "bSearchable": false,
+                          "bSortable": false,
+                          "sWidth": "30px",
+                          "fnRender": function (oObj) {
+                                  return '<a href=@Url.Action("Create","Sections")?' +
+                                  oObj.aData[0] + '>' + oObj.aData[0] + '</a>';
+                          }
+                      },
+                      { "sName": "NAME" },
+                      { "sName": "DESCRIPTION" }
+                  ],
+                  "oLanguage":{
+                                "sProcessing":   "",
+                              "sLengthMenu":   "Показать _MENU_",
+                              "sZeroRecords":  "Записи отсутствуют.",
+                              "sInfo":         "Записи с _START_ до _END_ из  _TOTAL_",
+                              "sInfoEmpty":    "Записи отсутствуют",
+                              "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
+                              "sInfoPostFix":  "",
+                              "sSearch":       "Поиск:",
+                              "sUrl":          "",
+                              "oPaginate": {
+                                  "sFirst": "<<",
+                                  "sPrevious": "<",
+                                  "sNext": ">",
+                                  "sLast": ">>"
+                              }
+              }
+              });
+              
+              oTable.$('td').hover(function () {
+                  var iCol = $('td', this.parentNode).index(this) % 5;
+                  $('td:nth-child(' + (iCol + 1) + ')', oTable.$('tr')).addClass('highlight');
+              }, function () {
+                  oTable.$('td.highlight').removeClass('highlight');
+              });
 
-                            //"fnRender": function (oObj) {
-                            //    return '<a href=\"Details/' +
-                            //    oObj.aData[0] + '\">View</a>';
-                            }
-                        },
-                        { "sName": "NAME" },
-                        { "sName": "DESCRIPTION" }
-            ]
-        });
-    });
-    
+          });
 
-
-    //$(document).ready(function () {
-    //    $("#datatable").dataTable({
-    //        "sDom": 'R<"H"lfr>t<"F"ip<',
-    //        bJQueryUI: true,
-    //        sPaginationType: 'full_numbers'
-    //    });
-    //});
 
  </script>

@@ -33,8 +33,8 @@ namespace Site.Areas.Admin.Controllers {
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public System.Web.Mvc.ActionResult DeleteSelected() {
-            return new T4MVC_ActionResult(Area, Name, ActionNames.DeleteSelected);
+        public System.Web.Mvc.ActionResult AjaxDataTableHandler() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.AjaxDataTableHandler);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -52,15 +52,15 @@ namespace Site.Areas.Admin.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
             public readonly string Index = "Index";
+            public readonly string AjaxDataTableHandler = "AjaxDataTableHandler";
             public readonly string Create = "Create";
-            public readonly string DeleteSelected = "DeleteSelected";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants {
             public const string Index = "Index";
+            public const string AjaxDataTableHandler = "AjaxDataTableHandler";
             public const string Create = "Create";
-            public const string DeleteSelected = "DeleteSelected";
         }
 
 
@@ -88,6 +88,12 @@ namespace Site.Areas.Admin.Controllers {
             return callInfo;
         }
 
+        public override System.Web.Mvc.ActionResult AjaxDataTableHandler(WebSite.Models.JQueryDataTableParametersModel param) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.AjaxDataTableHandler);
+            callInfo.RouteValueDictionary.Add("param", param);
+            return callInfo;
+        }
+
         public override System.Web.Mvc.ActionResult Create() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Create);
             return callInfo;
@@ -96,14 +102,6 @@ namespace Site.Areas.Admin.Controllers {
         public override System.Web.Mvc.ActionResult Create(WebSite.Models.SectionCreateViewModel model) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Create);
             callInfo.RouteValueDictionary.Add("model", model);
-            return callInfo;
-        }
-
-        public override System.Web.Mvc.ActionResult DeleteSelected(int[] select, MvcContrib.UI.Grid.GridSortOptions sort, int? page) {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.DeleteSelected);
-            callInfo.RouteValueDictionary.Add("select", select);
-            callInfo.RouteValueDictionary.Add("sort", sort);
-            callInfo.RouteValueDictionary.Add("page", page);
             return callInfo;
         }
 

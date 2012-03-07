@@ -3,20 +3,21 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_DashboardLayout.cshtml";
 }
-
+@Html.Partial("CssPatches/_TableJQueryUi")
 <div class="span9">
     <table id="datatable" class="display">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody> 
-                    </tbody>
-                </table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody> 
+        </tbody>
+    </table>
 </div>
+
 
 @section ViewScripts
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Globalization;
@@ -26,36 +27,48 @@ namespace Site.Areas.Admin.Controllers
         {
             return View();
         }
+
+        //!+Table Handler 
         [HttpGet]
-        public ActionResult AjaxDataTableHandler(JQueryDataTableParametersModel param)
+        public virtual ActionResult AjaxDataTableHandler(JQueryDataTableParametersModel param)
         {
-            var sect = sections.GetAll();
-            var model = from c in sect
+            var allSect = sections.GetAll().Count();
+
+            IEnumerable<Sections> filtered = !string.IsNullOrEmpty(param.sSearch) ? sections.GetAll().Where(c => (c.Name ?? "").ToLower().Contains(param.sSearch.ToLower()) || (c.Description ?? "").ToLower().Contains(param.sSearch.ToLower())) : sections.GetAll();
+
+            
+
+            var isNameSortable = Convert.ToBoolean(Request["bSortable_1"]);
+            var isDescriptionSortable = Convert.ToBoolean(Request["bSortable_2"]);
+            var sortColumnIndex = Convert.ToInt32(Request["iSortCol_0"]);
+
+            Func<Sections, string> ordering = (c => sortColumnIndex == 1 && isNameSortable ? c.Name :
+                                                    sortColumnIndex == 2 && isDescriptionSortable ? c.Description : "");
+
+            var sortDirection = Request["sSortDir_0"]; // asc or desc
+            if (sortDirection == "asc")
+                filtered = filtered.OrderBy(ordering);
+            else
+                filtered = filtered.OrderByDescending(ordering);
+
+            var displayed = filtered
+                .Skip(param.iDisplayStart)
+                .Take(param.iDisplayLength);
+
+            var model = from c in displayed
                         select new[] {Convert.ToString(c.SectionId), c.Name, c.Description};
             return Json(new
             {
                 sEcho = param.sEcho,
-                iTotalRecords = sect.Count(),
-                iTotalDisplayRecords = sect.Count(),
+                iTotalRecords = allSect,
+                iTotalDisplayRecords = filtered.Count(),
                 aaData = model
             },
             JsonRequestBehavior.AllowGet);
         }
-        //public virtual ActionResult Index(GridSortOptions sort, int? page)
-        //{
-        //    var pageNumber = page ?? 1;
-        //    var sect = sections.GetAll();
-        //    if (sort.Column != null)
-        //        sect = sect.OrderBy(sort.Column, sort.Direction);
-        //    var model = new SectionsIndexViewModel(sect, pageNumber, 20);
-        //    ViewData["sort"] = sort;
-        //    return View(model);
-        //}
+        
 
-        //public virtual ActionResult Details()
-        //{
-        //    return View();
-        //}
+
 
         //!+Create /get
         public virtual ActionResult Create()
@@ -63,6 +76,8 @@ namespace Site.Areas.Admin.Controllers
             var model = new SectionCreateViewModel();
             return View(model);
         }
+
+
         //!+Create /post
         [HttpPost]
         public virtual ActionResult Create(SectionCreateViewModel model)
@@ -74,29 +89,7 @@ namespace Site.Areas.Admin.Controllers
             sections.CreateMapping(model);
             return RedirectToAction("Index");
         }
-        //!+DeleteSelected /post/ajax
-        [HttpPost]
-        public virtual ActionResult DeleteSelected(int[] select, GridSortOptions sort, int? page)
-        {
-            if (!ModelState.IsValid)
-                return RedirectToAction("Index");
-            var count = select.Count();
-            if (select != null)
-                sections.DeleteGroup(select);
-            //!ajax
-            if (Request.IsAjaxRequest())
-            {
-                var pageNumber = page ?? 1;
-                ViewData["Delcount"] = count.ToString();
-                var sect = sections.GetAll();
-                if (sort.Column != null)
-                    sect = sect.OrderBy(sort.Column, sort.Direction);
-                var model = new SectionsIndexViewModel(sect, pageNumber, 20);
-                return PartialView("SectionsPartials/_IndexGrid", model);
-            }
-
-            return RedirectToAction("Index");
-        }
+        
 
         protected override void Dispose(bool disposing)
         {

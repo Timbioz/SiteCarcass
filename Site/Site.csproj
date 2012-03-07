@@ -111,8 +111,14 @@
     <Reference Include="Pandora">
       <HintPath>..\packages\Cassette.1.1.0\lib\net40-Client\Pandora.dll</HintPath>
     </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorJS.0.4.3\lib\RazorEngine.dll</HintPath>
+    </Reference>
     <Reference Include="RazorGenerator.Mvc">
       <HintPath>..\packages\RazorGenerator.Mvc.1.3.2.0\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorJS">
+      <HintPath>..\packages\RazorJS.0.4.3\lib\RazorJS.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
@@ -141,9 +147,9 @@
     <Reference Include="System.Web.Providers">
       <HintPath>..\packages\System.Web.Providers.1.0.1\lib\Net40\System.Web.Providers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\AspNetWebPagesCore.2.0.10906.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\RazorEngine.3.0.8\lib\net40\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -997,15 +1003,17 @@
     <Content Include="Areas\Admin\Style\bootstrap.css" />
     <Content Include="Areas\Admin\Style\BootstrapImages\glyphicons-halflings-white.png" />
     <Content Include="Areas\Admin\Style\BootstrapImages\glyphicons-halflings.png" />
+    <Content Include="Areas\Admin\Style\images\ajax-loader.gif" />
+    <Content Include="Areas\Admin\Style\images\processing-loading.gif" />
     <Content Include="Areas\Admin\Style\images\ui-bg_flat_30_cccccc_40x100.png" />
     <Content Include="Areas\Admin\Style\images\ui-bg_flat_50_5c5c5c_40x100.png" />
     <Content Include="Areas\Admin\Style\images\ui-bg_glass_20_555555_1x400.png" />
-    <Content Include="Areas\Admin\Style\images\ui-bg_glass_40_0078a3_1x400.png" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_glass_40_787878_1x400.png" />
     <Content Include="Areas\Admin\Style\images\ui-bg_glass_40_ffc73d_1x400.png" />
     <Content Include="Areas\Admin\Style\images\ui-bg_gloss-wave_25_333333_500x100.png" />
+    <Content Include="Areas\Admin\Style\images\ui-bg_gloss-wave_30_363636_500x100.png" />
     <Content Include="Areas\Admin\Style\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
     <Content Include="Areas\Admin\Style\images\ui-bg_inset-soft_25_000000_1x100.png" />
-    <Content Include="Areas\Admin\Style\images\ui-bg_inset-soft_30_f58400_1x100.png" />
     <Content Include="Areas\Admin\Style\images\ui-icons_222222_256x240.png" />
     <Content Include="Areas\Admin\Style\images\ui-icons_4b8e0b_256x240.png" />
     <Content Include="Areas\Admin\Style\images\ui-icons_a83300_256x240.png" />
@@ -1175,6 +1183,7 @@
     <Content Include="Areas\Admin\Views\Sections\Index.cshtml" />
     <None Include="Areas\Admin\Style\images\Sorting icons.psd" />
     <Content Include="Areas\Admin\Views\Shared\JsScripts\Sections\TableScript.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\CssPatches\_TableJQueryUi.cshtml" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
