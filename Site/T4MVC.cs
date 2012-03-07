@@ -334,7 +334,10 @@ namespace Links {
         public static readonly string jquery_1_7_1_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.7.1-vsdoc.min.js") ? Url("jquery-1.7.1-vsdoc.min.js") : Url("jquery-1.7.1-vsdoc.js");
                       
         public static readonly string jquery_1_7_1_min_js = Url("jquery-1.7.1.min.js");
-        public static readonly string jquery_ui_1_8_17_custom_min_js = Url("jquery-ui-1.8.17.custom.min.js");
+        public static readonly string jquery_ui_1_8_18_custom_min_js = Url("jquery-ui-1.8.18.custom.min.js");
+        public static readonly string jquery_dataTables_columnFilter_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.dataTables.columnFilter.min.js") ? Url("jquery.dataTables.columnFilter.min.js") : Url("jquery.dataTables.columnFilter.js");
+                      
+        public static readonly string jquery_dataTables_min_js = Url("jquery.dataTables.min.js");
         public static readonly string jquery_notify_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.notify.min.js") ? Url("jquery.notify.min.js") : Url("jquery.notify.js");
                       
         public static readonly string jquery_unobtrusive_ajax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.unobtrusive-ajax.min.js") ? Url("jquery.unobtrusive-ajax.min.js") : Url("jquery.unobtrusive-ajax.js");
@@ -356,16 +359,6 @@ namespace Links {
                       
         public static readonly string MyScripts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MyScripts.min.js") ? Url("MyScripts.min.js") : Url("MyScripts.js");
                       
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class PagedList {
-            private const string URLPATH = "~/Scripts/PagedList";
-            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string PagedList_Mvc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PagedList.Mvc.min.js") ? Url("PagedList.Mvc.min.js") : Url("PagedList.Mvc.js");
-                          
-            public static readonly string PagedList_Mvc_Template_html = Url("PagedList.Mvc.Template.html");
-        }
-    
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -374,7 +367,6 @@ namespace Links {
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string glyphicons_000_glass_png = Url("glyphicons_000_glass.png");
-        public static readonly string PagedList_css = Url("PagedList.css");
         public static readonly string Site_css = Url("Site.css");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class themes {

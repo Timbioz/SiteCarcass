@@ -38,6 +38,15 @@ namespace T4MVC.Admin {
             public partial class _EditorTemplates{
                 public readonly string _Notifications = "_Notifications";
             }
+            static readonly _JsScripts s_JsScripts = new _JsScripts();
+            public _JsScripts JsScripts { get { return s_JsScripts; } }
+            public partial class _JsScripts{
+                static readonly _Sections s_Sections = new _Sections();
+                public _Sections Sections { get { return s_Sections; } }
+                public partial class _Sections{
+                    public readonly string TableScript = "~/Areas/Admin/Views/Shared/JsScripts/Sections/TableScript.cshtml";
+                }
+            }
             static readonly _SectionsPartials s_SectionsPartials = new _SectionsPartials();
             public _SectionsPartials SectionsPartials { get { return s_SectionsPartials; } }
             public partial class _SectionsPartials{

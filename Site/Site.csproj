@@ -108,14 +108,11 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PagedList">
-      <HintPath>..\packages\PagedList.1.14\lib\net40\PagedList.dll</HintPath>
-    </Reference>
-    <Reference Include="PagedList.Mvc">
-      <HintPath>..\packages\PagedList.Mvc.3.14\lib\net40\PagedList.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="Pandora">
       <HintPath>..\packages\Cassette.1.1.0\lib\net40-Client\Pandora.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc">
+      <HintPath>..\packages\RazorGenerator.Mvc.1.3.2.0\lib\net40\RazorGenerator.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
@@ -137,6 +134,9 @@
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\AspNetMvc.4.0.10906.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc.Html5">
+      <HintPath>..\packages\MVCHtml5Toolkit.1.2.0\lib\System.Web.Mvc.Html5.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Providers">
       <HintPath>..\packages\System.Web.Providers.1.0.1\lib\Net40\System.Web.Providers.dll</HintPath>
@@ -192,6 +192,7 @@
     <Compile Include="Admin.SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
@@ -1014,9 +1015,24 @@
     <Content Include="Areas\Admin\Style\ui.notify.css" />
     <Content Include="bin\CKFinder.dll" />
     <Content Include="Chirpy.ReadMe.txt" />
+    <Content Include="Areas\Admin\Style\jquery.dataTables.css" />
+    <Content Include="Areas\Admin\Style\jquery.dataTables_themeroller.css" />
+    <Content Include="Areas\Admin\Style\images\back_disabled.png" />
+    <Content Include="Areas\Admin\Style\images\back_enabled.png" />
+    <Content Include="Areas\Admin\Style\images\back_enabled_hover.png" />
+    <Content Include="Areas\Admin\Style\images\favicon.ico" />
+    <Content Include="Areas\Admin\Style\images\forward_disabled.png" />
+    <Content Include="Areas\Admin\Style\images\forward_enabled.png" />
+    <Content Include="Areas\Admin\Style\images\forward_enabled_hover.png" />
+    <Content Include="Areas\Admin\Style\images\sort_asc.png" />
+    <Content Include="Areas\Admin\Style\images\sort_asc_disabled.png" />
+    <Content Include="Areas\Admin\Style\images\sort_both.png" />
+    <Content Include="Areas\Admin\Style\images\sort_desc.png" />
+    <Content Include="Areas\Admin\Style\images\sort_desc_disabled.png" />
     <Content Include="Content\glyphicons_000_glass.png" />
-    <Content Include="Content\PagedList.css" />
     <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\jquery.dataTables.columnFilter.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom.min.js" />
     <Content Include="Scripts\jquery.notify.js" />
     <Content Include="Scripts\MyScripts.js" />
@@ -1061,8 +1077,6 @@
     <Content Include="Scripts\knockout-1.3.0beta.debug.js" />
     <Content Include="Scripts\knockout-1.3.0beta.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Scripts\PagedList\PagedList.Mvc.js" />
-    <Content Include="Scripts\PagedList\PagedList.Mvc.Template.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1150,7 +1164,7 @@
     <None Include="Areas\Admin\Images\Glyphicons\.DS_Store" />
     <Content Include="Areas\Admin\Views\Posts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Sections\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Sections\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sections\BackUp\Index.cshtml" />
     <None Include="Areas\Admin\Plugins\CKeditor\.htaccess" />
     <Content Include="Areas\Admin\Views\Posts\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_CkeditorScripts.cshtml" />
@@ -1158,6 +1172,9 @@
     <None Include="Areas\Admin\Plugins\CKfinder\userfiles\.htaccess" />
     <Content Include="Areas\Admin\Views\Shared\SectionsPartials\_IndexGrid.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\_Notifications.cshtml" />
+    <Content Include="Areas\Admin\Views\Sections\Index.cshtml" />
+    <None Include="Areas\Admin\Style\images\Sorting icons.psd" />
+    <Content Include="Areas\Admin\Views\Shared\JsScripts\Sections\TableScript.cshtml" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>

@@ -1,0 +1,40 @@
+﻿ <script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#datatable').dataTable({
+            "bServerSide": true,
+            bJQueryUI: true,
+            sPaginationType: 'full_numbers',
+            "sAjaxSource": "Sections/AjaxDataTableHandler",
+            //"bProcessing": true,
+            "aoColumns": [
+                        {
+                            "sName": "ID",
+                            "bSearchable": false,
+                            "bSortable": false,
+                            "fnRender": function (oObj) {
+                                return @Html.
+
+
+                            //"fnRender": function (oObj) {
+                            //    return '<a href=\"Details/' +
+                            //    oObj.aData[0] + '\">View</a>';
+                            }
+                        },
+                        { "sName": "NAME" },
+                        { "sName": "DESCRIPTION" }
+            ]
+        });
+    });
+    
+
+
+    //$(document).ready(function () {
+    //    $("#datatable").dataTable({
+    //        "sDom": 'R<"H"lfr>t<"F"ip<',
+    //        bJQueryUI: true,
+    //        sPaginationType: 'full_numbers'
+    //    });
+    //});
+
+ </script>

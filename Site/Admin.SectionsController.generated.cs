@@ -33,11 +33,6 @@ namespace Site.Areas.Admin.Controllers {
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public System.Web.Mvc.ActionResult Index() {
-            return new T4MVC_ActionResult(Area, Name, ActionNames.Index);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public System.Web.Mvc.ActionResult DeleteSelected() {
             return new T4MVC_ActionResult(Area, Name, ActionNames.DeleteSelected);
         }
@@ -76,6 +71,11 @@ namespace Site.Areas.Admin.Controllers {
         public class ViewNames {
             public readonly string Create = "~/Areas/Admin/Views/Sections/Create.cshtml";
             public readonly string Index = "~/Areas/Admin/Views/Sections/Index.cshtml";
+            static readonly _BackUp s_BackUp = new _BackUp();
+            public _BackUp BackUp { get { return s_BackUp; } }
+            public partial class _BackUp{
+                public readonly string Index = "~/Areas/Admin/Views/Sections/BackUp/Index.cshtml";
+            }
         }
     }
 
@@ -83,10 +83,8 @@ namespace Site.Areas.Admin.Controllers {
     public class T4MVC_SectionsController: Site.Areas.Admin.Controllers.SectionsController {
         public T4MVC_SectionsController() : base(Dummy.Instance) { }
 
-        public override System.Web.Mvc.ActionResult Index(MvcContrib.UI.Grid.GridSortOptions sort, int? page) {
+        public override System.Web.Mvc.ActionResult Index() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Index);
-            callInfo.RouteValueDictionary.Add("sort", sort);
-            callInfo.RouteValueDictionary.Add("page", page);
             return callInfo;
         }
 

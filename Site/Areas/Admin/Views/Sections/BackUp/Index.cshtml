@@ -1,0 +1,110 @@
+﻿@model WebSite.Models.SectionsIndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_DashboardLayout.cshtml";
+}
+<div class="span9">
+    @using (Ajax.BeginForm("DeleteSelected", "Sections", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "sectionsindexgrid", OnComplete = "OnClik", OnSuccess = "Diss" }))
+    {
+
+        <div id="sectionsindexgrid">
+            @Html.Partial("SectionsPartials/_IndexGrid", Model)
+        </div>
+        <p style="float: right">
+            <button class="btn btn-danger forchecked my-modal" style="display: none" data-toggle="modal"
+                href="#myModal"><i class="icon-remove-sign"></i> Удалить</button>
+        </p>
+  
+        <div class="modal fade" id="myModal" style="border: black 2px solid">
+            <div class="modal-header" style="background-color: #e35551; border-bottom: black 2px solid">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Удаление выбранных разделов</h3>
+            </div>
+            <div class="modal-body">
+                <p>Вы уверены что хотите удалить выбранные разделы?</p>
+            </div>
+            <div class="modal-footer">
+                <a id="okbtn" href="#" class="btn btn-danger submit-link" data-dismiss="modal">Да, удалить
+                </a><a href="#" data-dismiss="modal" class="btn">Отмена</a>
+            </div>
+        </div>
+
+        @Html.Partial("EditorTemplates/_Notifications")
+    }
+</div>
+@section ViewScripts
+{
+    <script type="text/javascript">
+
+    //$('a[href*="Direction"]').addClass("ajax-links");
+        $('th#ajax a').livequery(function() {
+            $(this).addClass("ajax-links");
+        });
+    $(document).ready(function () {
+
+        $("*.ajax-links").css("color", "red");
+        
+        //References
+        var loading = $("#loading");
+        var container = $("#sectionsindexgrid");
+        var link;
+
+        //Manage click events
+        $("a.ajax-links").click(function (e) {
+            //prevent default action
+            e.preventDefault();
+
+            //show the loading bar
+            //showLoading();
+            container.slideUp();
+
+            //define the target and get content then load it to container
+            link = $(this).attr("href");
+            container.load(link, hideLoading);
+            container.slideDown();
+
+        });
+
+        //show loading bar
+        function showLoading() {
+            loading
+.css({ visibility: "visible" })
+.css({ opacity: "1" })
+.css({ display: "block" })
+;
+        }
+        //hide loading bar
+        function hideLoading() {
+            loading.fadeTo(1000, 0);
+            
+        };
+    });
+
+
+
+
+
+
+        $("input:checkbox").click(function () {
+            if ($("input:checkbox:checked").length == 0) {
+                $(".forchecked").css("display", "none");
+            } else {
+                $(".forchecked").css("display", "block");
+            }
+        });
+    
+        function Diss() {
+            $(".forchecked").css("display", "none");
+        }
+        $('.my-modal').modal('hide');
+        function OnClik() {
+            var container = $("#notify-container").notify();
+            var delcount = document.getElementById('delcount').value;
+            container.notify("create", "default", {
+                title: "Удаление прошло успешно",
+                text: "Количество удаленных разделов: " + delcount
+            });
+        }
+
+    </script>
+}

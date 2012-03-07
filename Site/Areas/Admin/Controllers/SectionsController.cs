@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcContrib.UI.Grid;
-using PagedList;
 using WebSite.Services;
 using WebSite.Models;
 using MvcContrib.Sorting;
@@ -23,21 +22,41 @@ namespace Site.Areas.Admin.Controllers
             this.sections = sections;
         }
         //!+Index
-        public virtual ActionResult Index(GridSortOptions sort, int? page)
+        public virtual ActionResult Index()
         {
-            var pageNumber = page ?? 1;
-            var sect = sections.GetAll();
-            if (sort.Column != null)
-                sect = sect.OrderBy(sort.Column, sort.Direction);
-            var model = new SectionsIndexViewModel(sect, pageNumber, 20);
-            ViewData["sort"] = sort;
-            return View(model);
+            return View();
         }
+        [HttpGet]
+        public ActionResult AjaxDataTableHandler(JQueryDataTableParametersModel param)
+        {
+            var sect = sections.GetAll();
+            var model = from c in sect
+                        select new[] {Convert.ToString(c.SectionId), c.Name, c.Description};
+            return Json(new
+            {
+                sEcho = param.sEcho,
+                iTotalRecords = sect.Count(),
+                iTotalDisplayRecords = sect.Count(),
+                aaData = model
+            },
+            JsonRequestBehavior.AllowGet);
+        }
+        //public virtual ActionResult Index(GridSortOptions sort, int? page)
+        //{
+        //    var pageNumber = page ?? 1;
+        //    var sect = sections.GetAll();
+        //    if (sort.Column != null)
+        //        sect = sect.OrderBy(sort.Column, sort.Direction);
+        //    var model = new SectionsIndexViewModel(sect, pageNumber, 20);
+        //    ViewData["sort"] = sort;
+        //    return View(model);
+        //}
 
         //public virtual ActionResult Details()
         //{
         //    return View();
         //}
+
         //!+Create /get
         public virtual ActionResult Create()
         {
