@@ -18,17 +18,28 @@ namespace WebSite.Services
             this.sectionsRepository = sectionsRepository;
             this.unitOfWork = unitOfWork;
         }
-
+        
+        //?+Total Count
+        /// <summary>
+        /// Возвращает количество всех разделов в базе данных
+        /// </summary>
+        /// <returns></returns>
+        public int TotalCount()
+        {
+            return sectionsRepository.Count();
+        }
+        
+        //?+Get Section
         public Sections GetSection(int id)
         {
             return sectionsRepository.GetById(id);
         }
-
+        //?+Get All
         public IEnumerable<Sections> GetAll()
         {
             return sectionsRepository.GetAll();
         }
-
+        //?+Create Section
         public bool CreateSection(Sections section)
         {
             sectionsRepository.Add(section);
@@ -39,10 +50,9 @@ namespace WebSite.Services
             }
             return false;
         }
-
+        //?+Create Mapping
         public bool CreateMapping(object viewModel)
         {
-            
             var sect = new Sections();
             Mapper.CreateMap<SectionCreateViewModel, Sections>();
             Mapper.Map((SectionCreateViewModel)viewModel, sect);
@@ -55,11 +65,14 @@ namespace WebSite.Services
             return false;
         }
 
+        
+
+        //?+Update Section
         public bool UpdateSection(Sections section)
         {
             throw new NotImplementedException();
         }
-
+        //?+Delete Section
         public bool DeleteSection(int id)
         {
             sectionsRepository.Delete(e => e.SectionId == id);
@@ -70,7 +83,7 @@ namespace WebSite.Services
             }
             return false;
         }
-
+        //?+Delete Group
         public bool DeleteGroup(IEnumerable<int> id)
         {
             foreach (var i in id)
@@ -84,7 +97,7 @@ namespace WebSite.Services
             }
             return false;
         }
-
+        //?DisposeCore
         public override void DisposeCore()
         {
             if (unitOfWork != null)

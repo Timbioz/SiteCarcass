@@ -9,6 +9,7 @@ namespace WebSite.Services
 {
     public interface ISectionsService
     {
+        int TotalCount();
         Sections GetSection(int id);
         IEnumerable<Sections> GetAll();
         bool CreateSection(Sections section);

@@ -34,6 +34,11 @@ namespace WebSite.Data
             _dbset.Add(entity);
         }
 
+        public virtual int Count()
+        {
+            return _dbset.Count();
+        }
+
         public virtual void Update(T entity)
         {
             _dbset.Attach(entity);

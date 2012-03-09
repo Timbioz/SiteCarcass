@@ -9,6 +9,7 @@ namespace WebSite.Data
     public interface IRepository<T> where T : class
     {
         void Add(T entity);
+        int Count();
         void Update(T entity);
         void Delete(T entity);
         void Delete(Expression<Func<T, Boolean>> where);

@@ -33,6 +33,11 @@ namespace T4MVC.Admin {
             public readonly string _LeftMenu = "~/Areas/Admin/Views/Shared/_LeftMenu.cshtml";
             public readonly string _Links = "~/Areas/Admin/Views/Shared/_Links.cshtml";
             public readonly string _Scripts = "~/Areas/Admin/Views/Shared/_Scripts.cshtml";
+            static readonly _CssPatches s_CssPatches = new _CssPatches();
+            public _CssPatches CssPatches { get { return s_CssPatches; } }
+            public partial class _CssPatches{
+                public readonly string _TableJQueryUi = "~/Areas/Admin/Views/Shared/CssPatches/_TableJQueryUi.cshtml";
+            }
             static readonly _EditorTemplates s_EditorTemplates = new _EditorTemplates();
             public _EditorTemplates EditorTemplates { get { return s_EditorTemplates; } }
             public partial class _EditorTemplates{
