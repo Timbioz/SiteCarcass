@@ -24,6 +24,7 @@ namespace Site
                             x.For<IPostsRepository>().Use<PostsRepository>();
                             x.For<ISectionsRepository>().Use<SectionsRepository>();
                             x.For<ISectionsService>().Use<SectionsService>();
+                            x.For<ICategoryService>().Use<CategoryService>();
                         });
             return ObjectFactory.Container;
         }

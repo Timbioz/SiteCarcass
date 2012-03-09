@@ -61,11 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DalServices\CategoryService.cs" />
     <Compile Include="DalServices\SectionsService.cs" />
     <Compile Include="DalServices\SettingsService.cs" />
     <Compile Include="DalServices\TopicsService.cs" />
     <Compile Include="DataTables\SectionsTable.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Interfaces\ICategoryService.cs" />
     <Compile Include="Interfaces\ISectionsService.cs" />
     <Compile Include="Interfaces\ISettingsService.cs" />
     <Compile Include="Interfaces\ITopicsService.cs" />

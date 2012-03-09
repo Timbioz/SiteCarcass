@@ -35,10 +35,12 @@ namespace T4MVC {
     public class AdminClass {
         public readonly string Name = "Admin";
         public Site.Areas.Admin.Controllers.BaseController Base = new Site.Areas.Admin.Controllers.T4MVC_BaseController();
+        public Site.Areas.Admin.Controllers.CategoriesController Categories = new Site.Areas.Admin.Controllers.T4MVC_CategoriesController();
         public Site.Areas.Admin.Controllers.DashboardController Dashboard = new Site.Areas.Admin.Controllers.T4MVC_DashboardController();
         public Site.Areas.Admin.Controllers.PostsController Posts = new Site.Areas.Admin.Controllers.T4MVC_PostsController();
         public Site.Areas.Admin.Controllers.SectionsController Sections = new Site.Areas.Admin.Controllers.T4MVC_SectionsController();
         public Site.Areas.Admin.Controllers.SettingsController Settings = new Site.Areas.Admin.Controllers.T4MVC_SettingsController();
+        public Site.Areas.Admin.Controllers.TestController Test = new Site.Areas.Admin.Controllers.T4MVC_TestController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();
     }
 }

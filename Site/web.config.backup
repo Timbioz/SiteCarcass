@@ -25,8 +25,6 @@
     <add key="ClientValidationEnabled" value="true" />
     <add key="UnobtrusiveJavaScriptEnabled" value="true" />
     <add key="VisualStudioDesignTime:Enabled" value="true" />
-    <add key="microsoft.visualstudio.teamsystems.aspnetdevserver:/" value="32437;True;3360;1;-8588703200437943561" />
-    <add key="microsoft.visualstudio.teamsystems.backupinfo" value="1;web.config.backup" />
   </appSettings>
   <system.web>
     <httpHandlers>

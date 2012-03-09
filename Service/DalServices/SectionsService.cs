@@ -70,7 +70,13 @@ namespace WebSite.Services
         //?+Update Section
         public bool UpdateSection(Sections section)
         {
-            throw new NotImplementedException();
+            sectionsRepository.Update(section);
+            unitOfWork.Commit();
+            if (sectionsRepository != null && unitOfWork != null)
+            {
+                return true;
+            }
+            return false;
         }
         //?+Delete Section
         public bool DeleteSection(int id)
@@ -98,11 +104,11 @@ namespace WebSite.Services
             return false;
         }
         //?DisposeCore
-        public override void DisposeCore()
-        {
-            if (unitOfWork != null)
-                unitOfWork.DisposeCore();
-            base.DisposeCore();
-        }
+        //public override void DisposeCore()
+        //{
+        //    if (unitOfWork != null)
+        //        unitOfWork.DisposeCore();
+        //    base.DisposeCore();
+        //}
     }
 }

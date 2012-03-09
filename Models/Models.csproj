@@ -85,6 +85,7 @@
     <Compile Include="Entities\Tegs.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LayoutsViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\ViewModels\Categories\CreateCategoryViewModel.cs" />
     <Compile Include="ViewModels\ViewModels\Sections\SectionCreateViewModel.cs" />
     <Compile Include="ViewModels\ViewModels\Sections\SectionsIndexViewModel.cs" />
   </ItemGroup>
