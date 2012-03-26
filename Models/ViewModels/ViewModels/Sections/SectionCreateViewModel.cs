@@ -9,21 +9,6 @@ namespace WebSite.Models
 {
     public class SectionCreateViewModel : DashboardViewModel
     {
-        public SectionCreateViewModel(){}
-
-        public SectionCreateViewModel(Sections section)
-        {
-            Mapper.CreateMap<Sections, SectionCreateViewModel>();
-            Mapper.Map(section, this);
-        }
-
-        public static IEnumerable<SectionCreateViewModel> GetDtoList(IEnumerable<Sections> sections)
-        {
-            Mapper.CreateMap<Sections, SectionCreateViewModel>();
-            var list = Mapper.Map<IEnumerable<Sections>, IEnumerable<SectionCreateViewModel>>(sections);
-            return list;
-        }
-
         [Display(Name = "Имя раздела")]
         [Required(ErrorMessage = "Имя раздела обязательно")]
         [StringLength(25, ErrorMessage = "Имя должно содержать менее 25 символов")]

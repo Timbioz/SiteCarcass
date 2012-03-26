@@ -1197,6 +1197,8 @@
     <Content Include="Areas\Admin\Views\Test\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Test\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Test\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>

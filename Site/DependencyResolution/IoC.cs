@@ -4,7 +4,7 @@ using WebSite.Models;
 using WebSite.Data;
 
 namespace Site
-{//structure map
+{
     public static class IoC
     {
         public static IContainer Initialize()

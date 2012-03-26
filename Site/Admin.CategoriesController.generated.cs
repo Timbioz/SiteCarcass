@@ -23,9 +23,6 @@ using T4MVC;
 namespace Site.Areas.Admin.Controllers {
     public partial class CategoriesController {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public CategoriesController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected CategoriesController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -50,11 +47,13 @@ namespace Site.Areas.Admin.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
             public readonly string Index = "Index";
+            public readonly string Create = "Create";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants {
             public const string Index = "Index";
+            public const string Create = "Create";
         }
 
 
@@ -63,6 +62,8 @@ namespace Site.Areas.Admin.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
+            public readonly string Create = "~/Areas/Admin/Views/Categories/Create.cshtml";
+            public readonly string Index = "~/Areas/Admin/Views/Categories/Index.cshtml";
         }
     }
 
@@ -72,6 +73,17 @@ namespace Site.Areas.Admin.Controllers {
 
         public override System.Web.Mvc.ActionResult Index() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Index);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Create() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Create);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Create(WebSite.Models.CreateCategoryViewModel model) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Create);
+            callInfo.RouteValueDictionary.Add("model", model);
             return callInfo;
         }
 

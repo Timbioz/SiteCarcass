@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AutoMapper;
 using WebSite.Data;
 using WebSite.Models;
 
@@ -46,7 +47,16 @@ namespace WebSite.Services
 
         public bool CreateMapping(object viewModel)
         {
-            throw new NotImplementedException();
+            var cats = new Category();
+            Mapper.CreateMap<CreateCategoryViewModel, Category>();
+            Mapper.Map((CreateCategoryViewModel)viewModel, cats);
+            repository.Add(cats);
+            unitOfWork.Commit();
+            if (repository != null && unitOfWork != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool UpdateCategory(Category entity)

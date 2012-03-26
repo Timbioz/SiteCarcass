@@ -12,11 +12,10 @@ namespace WebSite.Models
         public int CategoryId { get; set; }
 
         [Required]
-        public int? SectionId { get; set; }
+        public int SectionId { get; set; }
 
-        [Display(Name = "Имя категории")]
-        [Required(ErrorMessage = "Имя категории обязательно")]
-        [StringLength(25, ErrorMessage = "Имя должно содержать не более 25 символов")]
+        
+        [Required]
         public string Name { get; set; }
 
         [StringLength(500, ErrorMessage = "...не более 500 символов")]
